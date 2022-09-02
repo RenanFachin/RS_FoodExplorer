@@ -8,8 +8,15 @@ export function SignIn() {
     <Container>
       <h1>Olá mundo</h1>
 
-      <Button title="Entrar"/>
-      <Button title="Criar conta"/>
+      <Button
+      title="Entrar"
+      loading
+      />
+
+      <Button
+      title="Criar conta"
+      />
+      
     </Container>
   )
 }
