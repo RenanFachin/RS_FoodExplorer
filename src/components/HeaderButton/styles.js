@@ -7,13 +7,13 @@ export const Container = styled.button`
     color: ${({theme})=> theme.COLORS.WHITE};
 
     /* width: 100%; */
-    width: 216px;
+    width: 21.6rem;
 
-    height: 56px;
+    height: 5.6rem;
 
-    border-radius: 5px;
+    border-radius: 0.5rem;
 
-    padding: 12px 32px;
+    padding: 1.2rem 3.2rem;
 
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ export const Container = styled.button`
     gap: 8px;
 
     > svg {
-        width: 32px;
-        height: 32px;
+        width: 3.2rem;
+        height: 3.2rem;
     }
 `;

@@ -6,7 +6,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.8rem;
 
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
 
@@ -16,16 +16,16 @@ export const Container = styled.div`
     }
 
     > input {
-        height: 48px;
+        height: 4.8rem;
         width: 100%;
-        padding: 12px 14px;
+        padding: 1.2rem 1.4rem;
         color: ${({theme}) => theme.COLORS.WHITE};
         background: transparent;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         border: 1px solid white;
     }
     
     > svg {
-            margin-left: 14px;
+            margin-left: 1.4rem;
     }
 `;

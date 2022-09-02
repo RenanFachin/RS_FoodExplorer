@@ -3,6 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
+
+:root{
+    font-size: 62.5%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,15 +17,18 @@ export default createGlobalStyle`
 body{
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
     color: ${({ theme }) => theme.COLORS.WHITE};
+}
 
+body,
+input,
+::placeholder{
     font-family: 'Roboto', sans-serif;
-
     -webkit-font-smoothing: antialiased;
 }
 
 body, input, button, textarea{
     outline: none;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 h1{
@@ -37,8 +45,8 @@ a{
 }
 
 button, a{
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 1.4rme;
+    line-height: 2.4rem;
     font-weight: 500;
     border: none;
 }
@@ -52,13 +60,8 @@ button:hover, a:hover{
     filter: brightness(0.9)
 }
 
-input{
-    font-family: 'Roboto', sans-serif;
-}
-
 ::placeholder{
     color: ${({ theme }) => theme.COLORS.GRAY_300};
-    font-family: 'Roboto', sans-serif;
 }
     
 `

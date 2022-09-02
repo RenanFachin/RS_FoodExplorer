@@ -11,12 +11,11 @@ export const Container = styled.div`
     > div{
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 2rem;
 
         > h1 {
-            font-size: 42px;
-            line-height: 50px;
-
+            font-size: 4.2rem;
+            line-height: 5rem;
         }
     }
 
@@ -25,23 +24,23 @@ export const Container = styled.div`
 export const Form = styled.form`
 
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_200};
-    min-width: 476px;
-    min-height: 540px;
-
-    padding: 64px;
+    min-width: 47.6rem;
+    min-height: 54rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 6.4rem;
+    gap: 3.2rem;
     
-    gap: 32px;
-    border-radius: 16px;
+    border-radius: 1.6rem;
 
     >h2 {
-        font-size: 32px;
+        font-size: 3.2rem;
         font-weight: 500;
-        line-height: 24px;
+        line-height: 2.4rem;
         text-align: center;
     }
 
