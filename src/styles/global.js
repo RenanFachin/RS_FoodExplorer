@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-
-
 :root{
     font-size: 62.5%;
 }
@@ -26,14 +24,13 @@ input,
     -webkit-font-smoothing: antialiased;
 }
 
-body, input, button, textarea{
+body, input, textarea{
     outline: none;
     font-size: 1.6rem;
 }
 
 h1{
     font-size: bold;
-    
 }
 
 h2, h3, a, button {
@@ -45,7 +42,7 @@ a{
 }
 
 button, a{
-    font-size: 1.4rme;
+    font-size: 1.4rem;
     line-height: 2.4rem;
     font-weight: 500;
     border: none;
@@ -53,11 +50,11 @@ button, a{
 
 button, a{
     cursor: pointer;
-    transition: filter 0.2s;
+    transition: filter 0.3s;
 }
 
 button:hover, a:hover{
-    filter: brightness(0.9)
+    filter: brightness(0.8)
 }
 
 ::placeholder{

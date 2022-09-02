@@ -25,7 +25,7 @@ export function SignIn() {
       title="Email"
       type="email" 
       label="email"
-      placeholder = "Exemplo: exemplo@exemplo.com.br" 
+      placeholder = "exemplo@exemplo.com.br" 
       required 
       />
 

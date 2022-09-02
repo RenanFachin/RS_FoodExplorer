@@ -8,6 +8,8 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-around;
 
+    animation: fadeIn 0.8s;
+
     > div{
         display: flex;
         align-items: center;
@@ -17,7 +19,65 @@ export const Container = styled.div`
             font-size: 4.2rem;
             line-height: 5rem;
         }
+
+        > svg {
+            animation: fade 6s infinite;
+            width: 7rem;
+            height: 7rem;
+        }
     }
+
+    @media (max-width: 810px) {
+    > div{
+        > h1 {
+            font-size: 3.6rem;
+        }
+        > svg {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+}
+
+
+    @media (max-width: 760px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    > div{
+        padding: 1.2rem;
+        > h1 {
+            font-size: 3.2;
+            line-height: 4rem;
+        }
+        > svg {
+            width: 5.2rem;
+            height: 5.2rem;
+        }
+    }
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0.1;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 `;
 
@@ -36,6 +96,10 @@ export const Form = styled.form`
     gap: 3.2rem;
     
     border-radius: 1.6rem;
+    
+    animation: fadeIn 0.8s;
+
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.1);
 
     >h2 {
         font-size: 3.2rem;
@@ -43,5 +107,34 @@ export const Form = styled.form`
         line-height: 2.4rem;
         text-align: center;
     }
+
+@media (max-width: 760px) {
+    min-width: 42rem;
+    padding: 4.8rem;
+    margin: 0 1rem;
+}
+
+
+@media (max-width: 500px) {
+    min-width: 34rem;
+    padding: 3.2rem;
+    margin: 0 2rem;
+
+    >h2 {
+        font-size: 2.8rem;
+        line-height: 2rem;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 `
