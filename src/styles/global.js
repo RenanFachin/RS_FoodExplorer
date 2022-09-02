@@ -14,9 +14,20 @@ body{
     color: ${({ theme }) => theme.COLORS.WHITE};
 
     font-family: 'Roboto', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
 }
 
-h2, h3, a{
+body, input, button, textarea{
+    outline: none;
+    font-size: 16px;
+}
+
+h1{
+    font-size: bold;
+}
+
+h2, h3, a, button {
     font-family: 'Poppins', sans-serif;
 }
 
