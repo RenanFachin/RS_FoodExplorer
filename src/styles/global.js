@@ -25,6 +25,7 @@ body, input, button, textarea{
 
 h1{
     font-size: bold;
+    
 }
 
 h2, h3, a, button {
@@ -35,7 +36,7 @@ a{
     text-decoration: none;
 }
 
-button {
+button, a{
     font-size: 14px;
     line-height: 24px;
     font-weight: 500;
@@ -51,8 +52,13 @@ button:hover, a:hover{
     filter: brightness(0.9)
 }
 
+input{
+    font-family: 'Roboto', sans-serif;
+}
+
 ::placeholder{
     color: ${({ theme }) => theme.COLORS.GRAY_300};
+    font-family: 'Roboto', sans-serif;
 }
     
 `

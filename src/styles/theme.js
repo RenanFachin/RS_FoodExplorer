@@ -2,7 +2,7 @@ export default {
     COLORS: {
         BACKGROUND: "#000A0F",
         BACKGROUND_200: "#001119",
-        BACKGROUND_300: "#0D1D25",
+        INPUT_BACKGROUND: "#0D1D25",
         BRACKGROUND_HEADER: "#00111A",
 
         GRAY: "#E1E1E6",
