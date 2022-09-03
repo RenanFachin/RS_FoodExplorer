@@ -47,7 +47,7 @@ export const Container = styled.div`
     > div{
         padding: 1.2rem;
         > h1 {
-            font-size: 3.2;
+            font-size: 3.2rem;
             line-height: 4rem;
         }
         > svg {
@@ -59,17 +59,17 @@ export const Container = styled.div`
 
     @media (max-width: 350px) {
 
-> div{
-    padding: 1rem;
-    > h1 {
-        font-size: 2.8rem;
-        line-height: 4rem;
+    > div{
+        padding: 1rem;
+        > h1 {
+            font-size: 2.8rem;
+            line-height: 4rem;
+        }
+        > svg {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
     }
-    > svg {
-        width: 4.8rem;
-        height: 4.8rem;
-    }
-}
 }
 
 @keyframes fade {
@@ -129,11 +129,10 @@ export const Form = styled.form`
     margin: 0 1rem;
 }
 
-
 @media (max-width: 500px) {
     min-width: 34rem;
     padding: 3.2rem;
-    margin: 0 2rem;
+    margin: 0 1rem;
 
     >h2 {
         font-size: 2.8rem;
