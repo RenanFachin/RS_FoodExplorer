@@ -24,8 +24,4 @@ export const Container = styled.div`
         border-radius: 0.5rem;
         border: 1px solid white;
     }
-    
-    > svg {
-            margin-left: 1.4rem;
-    }
 `;

@@ -30,7 +30,7 @@ body, input, textarea{
 }
 
 h1{
-    font-size: bold;
+    font-size: 700;
 }
 
 h2, h3, a, button {

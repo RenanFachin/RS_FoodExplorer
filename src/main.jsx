@@ -8,7 +8,7 @@ import theme from './styles/theme'
 import GlobalStyles from './styles/global'
 
 // Importando a página que será renderizada na #root
-import { SignIn } from './pages/SignIn/'
+import { Home } from './pages/Home/'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
 
-    <SignIn />
+    <Home />
     
     </ThemeProvider>
   </React.StrictMode>
