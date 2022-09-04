@@ -10,7 +10,7 @@ export default {
         GRAY_300: "#7C7C8A",
 
         LOGO_COLOR: "#065E7C",
-        VALUE_TEXT: "#82F3FF",
+        VALUE_TEXT: "#5baab2",
         BUTTON_SIGNIN: "#92000E",
         BUTTON: "#750310",
         WHITE: "#FFFFFF",

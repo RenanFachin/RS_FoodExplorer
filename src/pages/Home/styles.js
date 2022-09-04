@@ -18,6 +18,7 @@ export const Main = styled.main`
     max-width: 136.8rem;
 
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
 
     .Banner {
