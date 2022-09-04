@@ -1,4 +1,4 @@
-import { Container } from './styles'
+import { Container, Main } from './styles'
 
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
@@ -6,10 +6,22 @@ import { Footer } from '../../components/Footer/'
 export function Home(){
     return(
         <Container>
-            <Header />
+                <Header />
 
+                <Main>
+                    <section className='Banner'>
+                        <img src="../../../src/assets/main_image.png" alt="Macarrons" />
 
-            <Footer />
+                        <div className='Banner-background'>
+                            <div>
+                                <h2>Sabores inigualáveis</h2>
+                                <span>Sinta o cuidado do preparo com ingredientes selecionados</span>
+                            </div>
+                        </div>
+                    </section>
+                </Main>
+
+                <Footer />
         </Container>
     )
 }

@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+    grid-area: "header";
+
+
     width: 100%;
     min-height: 10.4rem;
     background-color: ${({theme}) => theme.COLORS.BRACKGROUND_HEADER};
@@ -29,7 +32,7 @@ export const Logo = styled.div`
     }
 `;
 
-export const Favorites = styled.a`
+export const Favorites = styled.div`
     > a {
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;

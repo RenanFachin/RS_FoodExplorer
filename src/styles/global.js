@@ -33,7 +33,11 @@ h1{
     font-size: 700;
 }
 
-h2, h3, a, button {
+h2, span {
+    color: ${({ theme }) => theme.COLORS.GRAY};
+}
+
+h2, h3, a, button, span {
     font-family: 'Poppins', sans-serif;
 }
 
