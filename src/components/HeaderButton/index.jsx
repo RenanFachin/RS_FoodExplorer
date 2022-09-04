@@ -1,4 +1,4 @@
-import {Container} from './styles'
+import { Container } from './styles'
 import { TbReceipt } from 'react-icons/tb'
 
 export function HeaderButton({title}){
