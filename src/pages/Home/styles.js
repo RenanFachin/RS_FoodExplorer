@@ -23,7 +23,7 @@ export const Main = styled.main`
 
     .Banner {
         position: relative;
-
+        margin-bottom: 6.2rem;
 
         > img {
             position: absolute;
@@ -66,5 +66,11 @@ export const Main = styled.main`
     }
     }
 
+    .CardWrapper{
+
+        display: flex;
+        gap: 2.7rem;
+        max-width: 136.8rem;
+    }
 
 `;
