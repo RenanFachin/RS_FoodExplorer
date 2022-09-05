@@ -3,7 +3,7 @@ import { Container } from './styles'
 import { Button } from '../Button/index'
 
 import { BiMinus, BiPlus} from 'react-icons/bi'
-import { AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 export function Card(){
     return(
