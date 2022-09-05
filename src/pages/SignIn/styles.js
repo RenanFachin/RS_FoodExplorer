@@ -123,6 +123,11 @@ export const Form = styled.form`
         text-align: center;
     }
 
+    > a {
+        text-decoration: none;
+        color: ${({theme})=> theme.COLORS.WHITE};
+    }
+
 @media (max-width: 768px) {
     min-width: 42rem;
     padding: 4.8rem;
