@@ -11,7 +11,7 @@ import GlobalStyles from './styles/global'
 import { Home } from './pages/Home/'
 
 // Utilizando a ROUTES
-// import { Routes } from './Routes'
+// import { Routes } from './routes'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

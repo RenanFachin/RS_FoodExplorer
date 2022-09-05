@@ -68,16 +68,16 @@ button:hover, a:hover{
  
 // ScrollBar
 body::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 8px;
 }
 
 body::-webkit-scrollbar-track {
-  background: ${({ theme }) => theme.COLORS.BACKGROUND};        /* color of the tracking area */
+  background: ${({ theme }) => theme.COLORS.BACKGROUND};
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: ${({ theme }) => theme.COLORS.INPUT_BACKGROUND};    /* color of the scroll thumb */
-  border-radius: 10px;       /* roundness of the scroll thumb */
+  background-color: ${({ theme }) => theme.COLORS.INPUT_BACKGROUND};
+  border-radius: 10px;
+  border: 1px solid ${({ theme }) => theme.COLORS.BRACKGROUND_HEADER};
 }
-
 `
