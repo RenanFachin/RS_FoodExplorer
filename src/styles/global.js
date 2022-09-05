@@ -64,5 +64,20 @@ button:hover, a:hover{
 ::placeholder{
     color: ${({ theme }) => theme.COLORS.GRAY_300};
 }
-    
+ 
+ 
+// ScrollBar
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: ${({ theme }) => theme.COLORS.BACKGROUND};        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: ${({ theme }) => theme.COLORS.INPUT_BACKGROUND};    /* color of the scroll thumb */
+  border-radius: 10px;       /* roundness of the scroll thumb */
+}
+
 `

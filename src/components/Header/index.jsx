@@ -5,7 +5,6 @@ import { HeaderButton } from '../../components/HeaderButton/'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
 
-
 export function Header(){   
     return(
         <Container>
@@ -20,7 +19,7 @@ export function Header(){
             </Logo>
 
             <Favorites>
-                <a href="">Meus favoritos</a>
+                <a href='/#'>Meus favoritos</a>
             </Favorites>
 
             <Search>
