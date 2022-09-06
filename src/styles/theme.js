@@ -5,6 +5,7 @@ export default {
         INPUT_BACKGROUND: "#0D1D25",
         BRACKGROUND_HEADER: "#00111A",
         TABLE_LINE:"#192227",
+        BACKGROUND_PAYMENTBUTTON: "#000C12",
 
         GRAY: "#E1E1E6",
         GRAY_100: "#C4C4C4",

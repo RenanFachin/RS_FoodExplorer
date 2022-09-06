@@ -18,7 +18,7 @@ export const Main = styled.main`
     padding: 2.4rem 12.3rem;
     
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 2fr 2.5fr;
     
     margin: 0 auto;
 
@@ -30,17 +30,60 @@ export const Main = styled.main`
 
     }
 
-    .allOrders{
-        border: 1px solid blue;       
+    .allOrders{    
         display: flex;
         flex-direction: column;
-
         gap: 3.2rem;
+
+        .priceItems{
+            font-size: 2rem;
+            line-height: 3.2rem;
+            font-weight: 500;
+        }
    }
 
     .paymentMethods{
-        border: 1px solid green;
         margin-left: 3rem;
+    }
+
+    .paymentBox{
+        margin-top: 3.2rem;
+        width: 53rem;
+        height: 44.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .paymentMethods__wrapper{
+        display: flex;
+        justify-content: space-between;
+
+
+        button {
+            width: 26.5rem;
+            height: 8.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: ${({theme})=>theme.COLORS.BACKGROUND_PAYMENTBUTTON};
+            color: ${({theme})=> theme.COLORS.WHITE};
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            
+            &:disabled {
+                background: rgba(255, 255, 255, 0.05)
+        }
+        }
+
+        .paymentForms{
+            img{
+                width: 27rem;
+                height: 27rem;
+            }
+        }
     }
 
 `;
