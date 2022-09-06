@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 export const Container = styled.header`
     grid-area: "header";
@@ -20,7 +21,7 @@ export const Content = styled.div`
     margin: auto;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
     display: flex;
     align-items: center;
     gap: 1.2rem;

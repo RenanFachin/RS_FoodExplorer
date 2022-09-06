@@ -1,7 +1,7 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
-
-export const Container = styled.button`
+export const Container = styled(Link)`
     background-color: ${({theme})=> theme.COLORS.BUTTON};
     color: ${({theme})=> theme.COLORS.WHITE};
 
