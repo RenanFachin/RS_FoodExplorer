@@ -4,6 +4,7 @@ export default {
         BACKGROUND_200: "#001119",
         INPUT_BACKGROUND: "#0D1D25",
         BRACKGROUND_HEADER: "#00111A",
+        TABLE_LINE:"#192227",
 
         GRAY: "#E1E1E6",
         GRAY_100: "#C4C4C4",
