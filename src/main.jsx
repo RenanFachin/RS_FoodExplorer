@@ -8,7 +8,7 @@ import theme from './styles/theme'
 import GlobalStyles from './styles/global'
 
 // Importando a página que será renderizada na #root
-import { Home } from './pages/Home/'
+import { OrderHistory } from './pages/OrderHistory/'
 
 // Utilizando a ROUTES
 // import { Routes } from './routes'
@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
 
-    <Home />
+    <OrderHistory />
     {/* <Routes /> */}
     
     </ThemeProvider>
