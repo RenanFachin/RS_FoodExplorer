@@ -13,5 +13,9 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-
+    grid-area: "main";
+    max-width: 136.8rem;
+    
+    display: flex;
+    margin: 0 auto;
 `;
