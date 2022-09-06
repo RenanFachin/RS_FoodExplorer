@@ -21,7 +21,8 @@ export function Section({title}){
                 </button>
 
                 <div>
-                <Card />
+                <Card
+                />
                 </div>
 
 

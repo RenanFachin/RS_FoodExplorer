@@ -3,6 +3,7 @@ import { Container, Main } from './style';
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { OrderItem } from '../../components/OrderItem'
+import { PaymentForm } from '../../components/PaymentForm'
 
 import qrCode from '../../assets/svg/qr-code.svg'
 
@@ -86,7 +87,7 @@ export function OrderPage(){
                         </div>
 
                         <div className='paymentForms'>
-                            {paymentType === 'pix' ? <img src={qrCode} /> : '<PaymentForm />'}
+                            {paymentType === 'pix' ? <img src={qrCode} /> : <PaymentForm />}
                         </div>
                     </div>
                 </section>

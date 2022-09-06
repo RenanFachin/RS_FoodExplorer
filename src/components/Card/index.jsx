@@ -6,13 +6,14 @@ import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 export function Card(){
+
     return(
         <Container>
             <button className='FavoriteDish'>
                 <AiOutlineHeart />
             </button>
 
-            <img src="../../../src/assets/Pratos/1_SaladaRavanello.png" alt="" />
+            <img src="../../../src/assets/Pratos/SaladaRavanello.png" alt="" />
 
             <h2>Salava Ravanello</h2>
             <span>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</span>
