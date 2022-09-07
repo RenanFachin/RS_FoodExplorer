@@ -1,21 +1,21 @@
 // Imagem dos pratos
-import saladaRavanello from '../assets/Pratos/1_SaladaRavanello.png'
-import torradaDeParma from '../assets/Pratos/2_TorradasDeParma.png'
-import spaguettiGambe from '../assets/Pratos/3_SpaguettiGambe.png'
-import saladaMolla from '../assets/Pratos/4_SaladaMolla.png'
-import prugnaPie from '../assets/Pratos/5_PrugnaPie.png'
-import peachyPastrie from '../assets/Pratos/6_PeachyPastrie.png'
-import macarons from '../assets/Pratos/7_Macarons.png'
-import boloDeDamasco from '../assets/Pratos/8_BoloDeDamasco.png'
-import sucoDeMaracuja from '../assets/Pratos/9_SucoDeMaracuja.png'
-import cafeEspresso from '../assets/Pratos/10_CafeEspresso.png'
-import teDAutonno from '../assets/Pratos/11_TeDAutonno.png'
-import pomoBourbon from '../assets/Pratos/12_PomoBourbon.png'
+import saladaRavanello from '../assets/Pratos/Salada de Ravanello.png'
+import torradaDeParma from '../assets/Pratos/Torradas De Parma.png'
+import spaguettiGambe from '../assets/Pratos/Spaguetti Gambe.png'
+import saladaMolla from '../assets/Pratos/Salada Molla.png'
+import prugnaPie from '../assets/Pratos/Prugna Pie.png'
+import peachyPastrie from '../assets/Pratos/Peachy Pastrie.png'
+import macarons from '../assets/Pratos/Macarons.png'
+import boloDeDamasco from '../assets/Pratos/Bolo De Damasco.png'
+import sucoDeMaracuja from '../assets/Pratos/Suco De Maracujá.png'
+import cafeEspresso from '../assets/Pratos/Café Espresso.png'
+import teDAutonno from '../assets/Pratos/Tè dautunno.png'
+import pomoBourbon from '../assets/Pratos/Pomo Bourbon.png'
 
 export const itemsDatabase = [
     {
         id: 1,
-        title: 'Salada Ravanello',
+        title: 'Salada de Ravanello',
         description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.',
         image: saladaRavanello,
         price: 49.97,
@@ -136,7 +136,7 @@ export const itemsDatabase = [
 
     {
         id: 10,
-        title: 'Espresso',
+        title: 'Café Espresso',
         description: 'Café cremoso feito na temperatura e pressões perfeitas.',
         image: cafeEspresso,
         price: 49.97,

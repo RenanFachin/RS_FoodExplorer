@@ -5,7 +5,10 @@ import { Footer } from '../../components/Footer/'
 import { Card } from '../../components/Card/'
 import { Section } from '../../components/Section/'
 
+import {mainCourse, dessert, drink} from '../../../src/utils/database'
+
 export function Home(){
+
     return(
         <Container>
                 <Header />
@@ -24,33 +27,49 @@ export function Home(){
 
 
                     <Section 
-                    title = "Pratos Principais"
+                    type = "Pratos Principais"
                     >
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    
+                    {mainCourse.map((dish) => (
+                        <Card 
+                        key={String(dish.id)}
+                        title={dish.title}
+                        price={dish.price}
+                        description={dish.description}
+                        />
+                    ))}
+                    
                     </Section>
 
-                    {/* <Section 
-                    title = "Sobremesas"
-                    />
+                    <Section 
+                    type = "Sobremesa"
+                    >
+                    
+                    {dessert.map((dish) => (
+                        <Card
+                        key={String(dish.id)}
+                        title={dish.title}
+                        price={dish.price}
+                        description={dish.description}
+                        />
+                    ))}
+                    
+                    </Section>
 
                     <Section 
-                    title = "Bebidas"
-                    /> */}
-
-
-                    {/* <section className='CardWrapper'>
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                    </section> */}
-
+                    type = "Bebidas"
+                    >
                     
-
-                    
+                    {drink.map((dish) => (
+                        <Card 
+                        key={String(dish.id)}
+                        title={dish.title}
+                        price={dish.price}
+                        description={dish.description}
+                        />
+                    ))}
+                    </Section>                 
+    
                 </Main>
 
                 <Footer />

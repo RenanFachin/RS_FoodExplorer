@@ -5,7 +5,8 @@ import { Button } from '../Button/index'
 import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
-export function Card(){
+export function Card({title, description, price, ...rest}){
+    const imagem = `../../../src/assets/Pratos/${title}.png`
 
     return(
         <Container>
@@ -13,12 +14,12 @@ export function Card(){
                 <AiOutlineHeart />
             </button>
 
-            <img src="../../../src/assets/Pratos/SaladaRavanello.png" alt="" />
+            <img src={imagem} alt="" />
 
-            <h2>Salava Ravanello</h2>
-            <span>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</span>
+            <h2>{title}</h2>
+            <span>{description}</span>
 
-            <h4>R$ 49,97</h4>
+            <h4>R$ {price}</h4>
 
             <div className='AmountItemsAndBuy-wrapper'>
                 <div className='Amount'>

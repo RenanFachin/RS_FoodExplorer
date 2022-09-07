@@ -3,17 +3,17 @@ import { IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
 import { useRef } from 'react';
 
-export function Section({title, children}){
+export function Section({type, children}){
     const slider = useRef(null);
 
-    function handleLeftClick(e) {
-        e.preventDefault();
+    function handleLeftClickSlider(event) {
+        event.preventDefault();
     
         slider.current.scrollLeft -= slider.current.offsetWidth;
       }
     
-      function handleRightClick(e) {
-        e.preventDefault();
+      function handleRightClickSlider(event) {
+        event.preventDefault();
     
         slider.current.scrollLeft += slider.current.offsetWidth;
       }
@@ -21,13 +21,13 @@ export function Section({title, children}){
     return(
         <Container>
             <h2>
-                {title}
+                {type}
             </h2>
 
             <Slider>
                 <button 
                 className='ArrowBack'
-                onClick={handleLeftClick}
+                onClick={handleLeftClickSlider}
                 >
                     <IoIosArrowBack size={40}/>
                 </button>
@@ -40,7 +40,7 @@ export function Section({title, children}){
 
                 <button 
                 className='ArrowForward'
-                onClick={handleRightClick}>
+                onClick={handleRightClickSlider}>
                     <IoIosArrowForward size={40}/>
                 </button>
             </Slider>

@@ -42,6 +42,7 @@ export const Container = styled.div`
     h2 {
         font-weight: 700;
         line-height: 3.6rem;
+        text-align: center;
     }
 
     span {

@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: orange;
     gap: 4rem;
 
+    margin-bottom: 4rem;
     h2 {
         font-weight: 500;
         font-size: 3.2rem;
@@ -21,7 +21,6 @@ export const Slider = styled.div`
     height: 51.2rem;
 
     position: relative;
-    background-color: violet;
 
     display: flex;
     justify-content: space-between;
@@ -46,10 +45,10 @@ export const Slider = styled.div`
     }
 
     .ArrowBack{
-        background: linear-gradient(270deg, rgba(0, 10, 15, 0.272541) 10%, red 100%);
+        background: linear-gradient(270deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
     }
 
     .ArrowForward{
-        background: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 10%, red 100%);
+        background: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
     }
 `;
