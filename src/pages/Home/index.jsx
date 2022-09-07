@@ -25,7 +25,12 @@ export function Home(){
 
                     <Section 
                     title = "Pratos Principais"
-                    />
+                    >
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    </Section>
 
                     {/* <Section 
                     title = "Sobremesas"

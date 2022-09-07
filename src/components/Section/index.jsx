@@ -1,11 +1,22 @@
 import { Container, Slider } from './styles'
-
 import { IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
-import {Card} from '../Card/'
+import { useRef } from 'react';
 
+export function Section({title, children}){
+    const slider = useRef(null);
 
-export function Section({title}){
+    function handleLeftClick(e) {
+        e.preventDefault();
+    
+        slider.current.scrollLeft -= slider.current.offsetWidth;
+      }
+    
+      function handleRightClick(e) {
+        e.preventDefault();
+    
+        slider.current.scrollLeft += slider.current.offsetWidth;
+      }
 
     return(
         <Container>
@@ -16,18 +27,20 @@ export function Section({title}){
             <Slider>
                 <button 
                 className='ArrowBack'
+                onClick={handleLeftClick}
                 >
                     <IoIosArrowBack size={40}/>
                 </button>
 
-                <div>
-                <Card
-                />
+                <div ref={slider}>
+                {children}
                 </div>
 
 
 
-                <button className='ArrowForward'>
+                <button 
+                className='ArrowForward'
+                onClick={handleRightClick}>
                     <IoIosArrowForward size={40}/>
                 </button>
             </Slider>
