@@ -14,7 +14,7 @@ export const Container = styled.div`
     // Borda condicional:
     border: ${({theme, isNew}) => isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : 'none'};
 
-    margin-bottom: 0.8rem;
+    /* margin-bottom: 0.8rem; */
     border-radius: 1rem;
     padding-right: 1rem;
 
@@ -34,8 +34,6 @@ export const Container = styled.div`
     > input {
         height: 3.2rem;
         max-width: 11rem;
-        text-align: center;
-
         padding: 1rem;
         color: ${({theme}) => theme.COLORS.WHITE};
         border: none;

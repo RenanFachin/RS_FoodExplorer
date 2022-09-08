@@ -26,7 +26,7 @@ export const Main = styled.main`
 `;
 
 export const ButtonBack = styled.div`
-    margin: 3.2rem 0;
+    margin: 1.8rem 0;
     max-width: 136.8rem;
     display: flex;
     flex-direction: column;
@@ -64,19 +64,14 @@ export const Form = styled.form`
     input {
         background-color: ${({theme})=> theme.COLORS.BACKGROUND};
     }
-
-    .inline {
-        display: flex;
-        justify-content: space-between;
-    }
-
 `;
 
 export const InputWrapper = styled.div`
     display: flex;
+    align-items: center;
     gap: 3.2rem;
-    flex-wrap: wrap;
     margin-bottom: 3.2rem;
+
 
 `;
 
@@ -113,11 +108,11 @@ export const SectionIngredients = styled.section`
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
-    width: 80%;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    padding: 1rem;
 `;
 
 
 
-export const SectionPrice = styled.div`
-    width: 20%;
-`;

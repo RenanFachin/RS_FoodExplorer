@@ -1,4 +1,4 @@
-import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients,SectionPrice } from './styles'
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients } from './styles'
 
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
@@ -41,29 +41,24 @@ export function Edit(){
                         placeholder="Ex.: Salada Ceasar"
                         />
 
+
+                        <Input
+                        label="name" 
+                        title="Preço" 
+                        type="text" 
+                        placeholder="R$ 00,00"
+                        />
+
                     </InputWrapper>
 
-
-                    <div className='inline'>
                     <SectionIngredients>
                         <NoteItem value="Alface"/>
                         <NoteItem value="Tomate"/>
+                        <NoteItem value="Tomate"/>
                         <NoteItem isNew placeholder='Adicionar'/>
                         <NoteItem isNew placeholder='Adicionar'/>
-
+                        <NoteItem isNew placeholder='Adicionar'/>
                     </SectionIngredients>
-
-
-                    <SectionPrice>
-                            <Input
-                            label="name" 
-                            type="text" 
-                            placeholder="R$ 00,00"
-                            />
-                    </SectionPrice>
-                    </div>
-
-
 
                     <TextArea>
                         <label htmlFor="">Descrição</label>
@@ -76,7 +71,7 @@ export function Edit(){
 
                     <Button
                     className='addButton'
-                    title="Adicionar"
+                    title="Adicionar pedido"
                     />
                         
                 </Form>
