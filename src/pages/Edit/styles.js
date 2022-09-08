@@ -20,8 +20,8 @@ export const Main = styled.main`
     width: 136.8rem;
     
     display: flex;
-
-    border: 1px solid white;
+    flex-direction: column;
+    padding: 2.4rem 12.3rem;
 
 `;
 
@@ -55,5 +55,69 @@ export const ButtonBack = styled.div`
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
+    max-width: 136.8rem;
 
+    label {
+        background-color: ${({theme})=> theme.COLORS.BACKGROUND};
+        color: ${({theme}) => theme.COLORS.GRAY_100};
+    }
+    input {
+        background-color: ${({theme})=> theme.COLORS.BACKGROUND};
+    }
+
+    .inline {
+        display: flex;
+        justify-content: space-between;
+    }
+
+`;
+
+export const InputWrapper = styled.div`
+    display: flex;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.2rem;
+
+`;
+
+export const TextArea = styled.div`
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND};
+
+    margin-bottom: 4.8rem;
+    > label{
+        margin-top: 3.2rem;
+        width: 100%;
+        color: ${({theme}) => theme.COLORS.GRAY_100};
+    }
+
+    > textarea {
+        height: 17.2rem;
+        width: 100%;
+        padding: 1.4rem;
+        color: ${({theme}) => theme.COLORS.WHITE};
+        background: transparent;
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        resize: none;
+    }
+
+`;
+
+export const SectionIngredients = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    width: 80%;
+`;
+
+
+
+export const SectionPrice = styled.div`
+    width: 20%;
 `;

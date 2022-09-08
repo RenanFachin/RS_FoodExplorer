@@ -19,6 +19,7 @@ body{
 
 body,
 input,
+textarea,
 ::placeholder{
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;

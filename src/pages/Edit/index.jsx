@@ -1,11 +1,19 @@
-import { Container, Main, ButtonBack, Form } from './styles'
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients,SectionPrice } from './styles'
 
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
+import { Input } from '../../components/Input'
+import { NoteItem } from '../../components/NoteItem'
+import {Button} from '../../components/Button'
+
 import { Link } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 
+import { useState } from 'react'
+
 export function Edit(){
+    const [description, setDescription] = useState("");
+
     return(
         <Container>
             <Header />
@@ -25,9 +33,53 @@ export function Edit(){
                 
 
                 <Form>
+                    <InputWrapper>
+                        <Input
+                        label="name" 
+                        title="Nome do prato" 
+                        type="text" 
+                        placeholder="Ex.: Salada Ceasar"
+                        />
 
+                    </InputWrapper>
+
+
+                    <div className='inline'>
+                    <SectionIngredients>
+                        <NoteItem value="Alface"/>
+                        <NoteItem value="Tomate"/>
+                        <NoteItem isNew placeholder='Adicionar'/>
+                        <NoteItem isNew placeholder='Adicionar'/>
+
+                    </SectionIngredients>
+
+
+                    <SectionPrice>
+                            <Input
+                            label="name" 
+                            type="text" 
+                            placeholder="R$ 00,00"
+                            />
+                    </SectionPrice>
+                    </div>
+
+
+
+                    <TextArea>
+                        <label htmlFor="">Descrição</label>
+                        <textarea
+                        placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                        onChange={e => setDescription(e.target.value)}
+                        >
+                        </textarea>
+                    </TextArea>      
+
+                    <Button
+                    className='addButton'
+                    title="Adicionar"
+                    />
+                        
                 </Form>
-
             </Main>
 
             <Footer />
