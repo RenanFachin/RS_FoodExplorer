@@ -10,10 +10,10 @@ export function Details(){
             <Header />
 
             <Main>
-                <DetailsCard 
-                    title={"Salada de Ravanello"}
-                    description={"Rabanetes, folhas verdes e molho agridoce salpicados com gergelim."}
-                    price={25.97}
+                <DetailsCard                                        
+                title={'aaa'}
+                description={'aaa'}
+                price={19.99}
                 />
             </Main>
 

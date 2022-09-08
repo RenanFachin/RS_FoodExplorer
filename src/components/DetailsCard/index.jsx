@@ -4,8 +4,23 @@ import { Button } from '../Button/index'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 import { IoIosArrowBack } from 'react-icons/io'
 
+import { useState, useEffect } from 'react'
 
 export function DetailsCard({title, description, price}){
+    // Começando em 1 a quantidade
+    const [quantity, setQuantity] = useState(1)
+
+    function handleAddItem() {
+        setQuantity (quantity+1)
+    }
+    
+    function handleRemoveItem() {
+        setQuantity (quantity-1)
+        if(quantity == 1){
+            setQuantity(1)
+        }
+    }
+
     return(
         <Container>
 
@@ -50,13 +65,19 @@ export function DetailsCard({title, description, price}){
                     <h4>R$ {price}</h4>
 
                     <div className='Amount'>
-                        <button className='MinusItem'>
+                        <button 
+                        className='MinusItem'
+                        onClick={handleRemoveItem}
+                        >
                             <BiMinus />
                         </button>
 
-                        <span>01</span>
+                        <span>0{quantity}</span>
                     
-                        <button className='PlusItem'>
+                        <button 
+                        className='PlusItem'
+                        onClick={handleAddItem}
+                        >
                             <BiPlus />
                         </button>
 

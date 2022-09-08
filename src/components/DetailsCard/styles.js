@@ -121,7 +121,8 @@ export const ButtonBack = styled(Link)`
 
     font-size: 2.4rem;
     font-weight: 500;
-    line-height: 33.6rem;
+    line-height: 3.6rem;
+    margin-top: 14rem;
 
     position: absolute;
     top: -10rem;

@@ -6,9 +6,13 @@ import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 
 export function Card({title, description, price, ...rest}){
     const imagem = `../../../src/assets/Pratos/${title}.png`
+    // Iniciando o navigate
+    const navigate = useNavigate()
 
     // Começando em 1 a quantidade
     const [quantity, setQuantity] = useState(1)
@@ -24,13 +28,22 @@ export function Card({title, description, price, ...rest}){
         }
     }
 
+    // function handleMoreDetailsAboutMeal(id){
+    //     navigate(`/details/${id}`)
+    // }
+
+
+
     return(
         <Container>
-            <button className='FavoriteDish'>
+            <button className='FavoriteDish' >
                 <AiOutlineHeart />
             </button>
 
-            <img src={imagem} alt="" />
+            <img 
+            src={imagem} 
+            alt=""
+            />
 
             <h2>{title}</h2>
             <span>{description}</span>
