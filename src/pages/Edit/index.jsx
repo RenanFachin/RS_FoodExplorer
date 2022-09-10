@@ -4,7 +4,7 @@ import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Input } from '../../components/Input'
 import { NoteItem } from '../../components/NoteItem'
-import {Button} from '../../components/Button'
+import { Button } from '../../components/Button'
 
 import { Link } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'

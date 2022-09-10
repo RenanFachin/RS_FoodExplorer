@@ -1,10 +1,11 @@
-import { Container, Main, ButtonBack, Content } from './style';
+import { Container, Main, ButtonBack, AllIngredientCards, Content } from './style';
 
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Button } from '../../components/Button/'
+import {IngredientCard} from '../../components/IngredientCard/'
 
-import {IoIosArrowBack} from 'react-icons/io'
+import { IoIosArrowBack } from 'react-icons/io'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 
 import { Link, useParams } from 'react-router-dom'
@@ -57,31 +58,17 @@ export function Details(){
                     <h2>{data.title}</h2>
                     <p>{data.description}</p>
                 </div>
+            
+                {data.ingredients && (
+                <AllIngredientCards>
+                {data.ingredients.map ((ingredient) => (
+                    <IngredientCard 
+                    data={ingredient}
+                    />
+                ))}
+                </AllIngredientCards>
+                )}
 
-
-                {/* REFAZER */}
-                <div className='ingredients'>
-                    <div className='ingredients-wrapper'>
-                        <img src="../../../src/assets/Ingredientes/alface.png" alt="" />
-                        <span>alface</span>
-                    </div>
-
-                    <div className='ingredients-wrapper'>
-                        <img src="../../../src/assets/Ingredientes/tomate.png" alt="" />
-                        <span>tomate</span>
-                    </div>
-
-                    <div className='ingredients-wrapper'>
-                        <img src="../../../src/assets/Ingredientes/rabanete.png" alt="" />
-                        <span>rabanete</span>
-                    </div>
-
-                    <div className='ingredients-wrapper'>
-                        <img src="../../../src/assets/Ingredientes/pngegg (4).png" alt="" />
-                        <span>pão naan</span>
-                    </div>
-        
-                </div>
 
                 <div className='AmountItemsAndBuy-wrapper'>
 

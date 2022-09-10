@@ -75,6 +75,7 @@ export const Content = styled.div`
         gap: 3rem;
         width: 60.3rem;
         height: 35.6rem;
+
     }
 
     .details-wrapper{
@@ -97,29 +98,7 @@ export const Content = styled.div`
             line-height: 3.4rem;
         }
     }
-
-    .ingredients{
-        display: flex;
-        gap: 4rem;
-    }
-
-    .ingredients-wrapper{
-        display: flex;
-        flex-direction: column;
-
-        > img{
-            width: 6rem;
-            height: 6rem;
-        }
-
-        > span {
-            font-size: 1.8rem;
-            line-height: 2.6rem;
-            font-weight: 300;
-            color: ${({theme}) => theme.COLORS.GRAY};
-        }
-    }
-
+    
     .Amount {
             display: flex;
             align-items: center;
@@ -154,4 +133,9 @@ export const Content = styled.div`
             color: ${({theme})=> theme.COLORS.GRAY};
     }
 }
+`;
+
+export const AllIngredientCards = styled.section`
+    display: flex;
+    gap: 4rem;
 `;

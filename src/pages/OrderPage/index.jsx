@@ -7,8 +7,8 @@ import { PaymentForm } from '../../components/PaymentForm'
 
 import qrCode from '../../assets/svg/qr-code.svg'
 
-import {BsXDiamond} from 'react-icons/bs'
-import {AiOutlineCreditCard} from 'react-icons/ai'
+import { BsXDiamond } from 'react-icons/bs'
+import { AiOutlineCreditCard } from 'react-icons/ai'
 
 import { useState } from 'react';
 

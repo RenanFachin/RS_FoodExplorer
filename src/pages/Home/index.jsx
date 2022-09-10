@@ -5,7 +5,7 @@ import { Footer } from '../../components/Footer/'
 import { Card } from '../../components/Card/'
 import { Section } from '../../components/Section/'
 
-import {mainCourse, dessert, drink} from '../../../src/utils/database'
+import { mainCourse, dessert, drink } from '../../../src/utils/database'
 
 export function Home(){
 

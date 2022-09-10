@@ -72,7 +72,10 @@ export function Card({data, ...rest}){
                     </button>
 
                 </div>
-                <Button title="incluir"/>
+                <Button 
+                title="incluir"
+                
+                />
             </div>
         </Container>
     )    
