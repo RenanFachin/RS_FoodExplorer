@@ -45,7 +45,7 @@ export const Slider = styled.div`
     }
 
     .ArrowBack{
-        background: linear-gradient(270deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
+        background: linear-gradient(270deg, rgba(0, 10, 15, 0.272541) 10%, #000A0F 100%);
     }
 
     .ArrowForward{

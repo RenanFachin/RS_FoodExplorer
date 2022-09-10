@@ -1,6 +1,6 @@
 import {Container} from './styles'
 
-export function AddButton({title, ...rest}){
+export function AddButton(){
     return(
         <Container type='button'>
             Incluir

@@ -1,4 +1,4 @@
-import {Container, Content, Logo, Copyright} from './styles'
+import { Container, Content, Logo, Copyright } from './styles'
 
 export function Footer(){
     return(

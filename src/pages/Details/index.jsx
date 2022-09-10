@@ -3,7 +3,7 @@ import { Container, Main, ButtonBack, AllIngredientCards, Content } from './styl
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Button } from '../../components/Button/'
-import {IngredientCard} from '../../components/IngredientCard/'
+import { IngredientCard } from '../../components/IngredientCard/'
 
 import { IoIosArrowBack } from 'react-icons/io'
 import { BiMinus, BiPlus } from 'react-icons/bi'

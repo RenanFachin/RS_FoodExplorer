@@ -1,5 +1,5 @@
 import { Container, Slider } from './styles'
-import { IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 import { useRef } from 'react';
 
