@@ -1,4 +1,4 @@
-import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients } from './styles'
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage } from './styles'
 
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
@@ -8,13 +8,16 @@ import { Button } from '../../components/Button'
 
 import { Link } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
+import { FiUpload } from 'react-icons/fi'
 
 import { useState } from 'react'
 
 export function Edit(){
+    const [imageFile, setImageFile] = useState(null);
     const [description, setDescription] = useState("");
 
     return(
+        
         <Container>
             <Header />
 
@@ -69,10 +72,24 @@ export function Edit(){
                         </textarea>
                     </TextArea>      
 
-                    <Button
-                    className='addButton'
-                    title="Adicionar pedido"
-                    />
+
+                    <SendFormWithImage>
+                        <div className='uploadImage'>
+                        <label id="file" htmlFor="image">
+                            Imagem do prato
+                            <div className='uploadImageSelect'>
+                                <FiUpload size={24}/>
+                                <span>Selecione a imagem</span>
+                                <input id="image" type="file" onChange={e => setImageFile(e.target.files[0])}/>
+                            </div>
+                        </label>
+                        </div>
+                    
+                        <Button
+                        className='addButton'
+                        title="Adicionar pedido"
+                        />
+                    </SendFormWithImage>
                         
                 </Form>
             </Main>

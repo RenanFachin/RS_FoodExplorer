@@ -64,6 +64,37 @@ export const Form = styled.form`
     input {
         background-color: ${({theme})=> theme.COLORS.BACKGROUND};
     }
+
+    .uploadImage {
+
+    #file {
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 0.8rem;
+
+      .uploadImageSelect {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 3rem;
+        border-radius: 0.5rem;
+        height: 4.8rem;
+        width: 30rem;
+
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        border: 1px solid ${({ theme }) => theme.COLORS.WHITE};
+      }
+    }
+
+    input[type="file"] {
+    /* Retirando a mensagem padrão */
+    display: none;
+    }
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -115,4 +146,12 @@ export const SectionIngredients = styled.section`
 `;
 
 
-
+export const SendFormWithImage = styled.div`
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+    > button{
+        width: 40%;
+    }
+`;

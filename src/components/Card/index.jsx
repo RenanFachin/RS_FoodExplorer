@@ -11,6 +11,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 export function Card({data, ...rest}){
     const imagem = `../../../src/assets/Pratos/${data.title}.png`
+
     // Iniciando o navigate
     const navigate = useNavigate()
 
