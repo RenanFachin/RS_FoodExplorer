@@ -52,6 +52,11 @@ export const Search = styled.div`
     background-color: ${({theme}) => theme.COLORS.INPUT_BACKGROUND};
     border-radius: 0.8rem;
 
+    border: 2px solid transparent;
+    &:focus-within{
+        border: 2px solid ${({theme}) => theme.COLORS.VALUE_TEXT};
+    }
+
     > input {
         height: 4.8rem;
         width: 100%;
@@ -60,6 +65,7 @@ export const Search = styled.div`
         background: ${({theme}) => theme.COLORS.INPUT_BACKGROUND};
         border: none;
         border-radius: 0.8rem;
+
     }
 
     > svg {
