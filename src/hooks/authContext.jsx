@@ -1,5 +1,5 @@
 // Importando o contextAPI do react
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 // Importando a API
 import { api } from '../services/api'
@@ -41,6 +41,25 @@ function AuthProvider({ children }){
             }
         }
     }
+
+    useEffect(() => {
+        // Buscando as informações que estão no localstorage
+        const token = localStorage.getItem("@foodexplorer:token")
+        const user = localStorage.getItem("@foodexplorer:user")
+
+        // Caso token e user estejam armazenados no localstorage
+        if(token && user){
+            // Inserindo o token no cabeçalho de todas as requisições
+            api.defaults.headers.authorization = `Bearer ${token}`
+
+            // Armazenando no state o usuário e seu token
+            setData({
+                token,
+                // Voltando o que estava em formato de texto no localstorage para formato de obj json
+                user: JSON.parse(user)
+            })
+        }
+    }, [])
 
 
     return (
