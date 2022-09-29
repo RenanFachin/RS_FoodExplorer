@@ -5,10 +5,16 @@ import { HeaderButton } from '../../components/HeaderButton/'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+// Importando o hook de autenticação
+import { useAuth } from '../../hooks/authContext'
 
 
-export function Header(){   
+export function Header(){
+    // acessando a função signOut do useAuth
+    const { signOut } = useAuth()
+    
     return(
         <Container>
         <Content>
@@ -35,7 +41,7 @@ export function Header(){
 
             <HeaderButton title="Meu pedido (0)"/>            
 
-            <Logout>
+            <Logout onClick={signOut}>
                 <FiLogOut />
             </Logout>
         </Content>

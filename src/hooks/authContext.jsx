@@ -11,7 +11,7 @@ function AuthProvider({ children }){
     // Criando um state para salvar os dados
     const [data, setData] = useState({});
 
-
+    // Logando
     async function signIn({email, password}){
 
         // Fazendo o login
@@ -42,6 +42,16 @@ function AuthProvider({ children }){
         }
     }
 
+    // Deslogando
+    function signOut(){
+        // Deletando as infos que estão no localstorage
+        localStorage.removeItem("@foodexplorer:token")
+        localStorage.removeItem("@foodexplorer:user")
+
+        // Voltando o state para vazio
+        setData({})
+    }
+
     useEffect(() => {
         // Buscando as informações que estão no localstorage
         const token = localStorage.getItem("@foodexplorer:token")
@@ -63,7 +73,8 @@ function AuthProvider({ children }){
 
 
     return (
-        <AuthContext.Provider value={{ signIn, user: data.user }}>
+        // Aqui iremos compartilhar a função de signIn, signOut e o usuário com todos os children(Rotas)
+        <AuthContext.Provider value={{ signIn, user: data.user, signOut }}>
             {/* o CHILDREN vai ser o Routes do main.jsx */}
             { children }
         </AuthContext.Provider>
