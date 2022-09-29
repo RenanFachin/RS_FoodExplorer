@@ -1,11 +1,47 @@
+import { useState } from "react"
+
+// Conexão e configurações da API
+import {api} from '../../services/api'
+
+// Import de estilizações
 import { Container, Form } from './styles';
 
+// Importação de components
 import { Input } from '../../components/Input/'
 import { Button } from '../../components/Button/'
 
-import { Link } from 'react-router-dom'
+// Navegação
+import { Link, useNavigate } from 'react-router-dom'
+
 
 export function SignUp(){
+    // States da página
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    // Inicilizando o navigate
+    const navigate = useNavigate();
+
+    function handleSignUp(){
+
+        if(!name || !email || !password){
+            return alert("Preencha todos os campos!");
+        }
+
+        // Acessando a api
+        api.post("/users", { name, email, password })
+        .then(()=>{
+            alert("Usuário cadastrado com sucesso!")
+            navigate("/")
+        })
+        .catch(error => {
+            if(error.response){
+                alert("Não foi possível cadastrar")
+            }
+        }) 
+    }
+
     return(
         <Container>
             <div>
@@ -25,7 +61,8 @@ export function SignUp(){
                 type="text" 
                 label="nome"
                 placeholder = "Exemplo: Maria da Silva" 
-                required 
+                // required
+                onChange={e => setName(e.target.value)}
                 />
 
                 <Input 
@@ -33,7 +70,8 @@ export function SignUp(){
                 type="email" 
                 label="email"
                 placeholder = "exemplo@exemplo.com" 
-                required 
+                // required
+                onChange={e => setEmail(e.target.value)}
                 />
 
                 <Input 
@@ -41,17 +79,23 @@ export function SignUp(){
                 label="password"
                 type="password" 
                 placeholder = "No mínimo 6 caracteres"
-                minLength = "6" 
-                required 
+                // minLength = "6" 
+                // required
+                onChange={e => setPassword(e.target.value)}
                 />
 
-                <Button title="Criar conta" />
+                <Button 
+                onClick={handleSignUp}
+                title={"Criar conta"}
+                />
+                   
+                
                 
                 <Link to='/'>
                     Já tenho uma conta
                 </Link>
 
-                </Form>
+            </Form>
         </Container>
     )
 }

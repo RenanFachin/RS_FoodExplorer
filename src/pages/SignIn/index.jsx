@@ -7,6 +7,7 @@ import { Button } from '../../components/Button'
 import { Link } from 'react-router-dom'
 
 export function SignIn() {
+
   return (
     <Container>
 
@@ -27,7 +28,7 @@ export function SignIn() {
       type="email" 
       label="email"
       placeholder = "exemplo@exemplo.com.br" 
-      required 
+      required
       />
 
       <Input 
@@ -39,7 +40,7 @@ export function SignIn() {
       required 
       />
 
-      <Button title="Entrar" />
+      <Button title="Entrar"/>
         
       <Link to='/register'>
         Criar uma conta

@@ -27,6 +27,7 @@ export const Container = styled.div`
         }
     }
 
+
     @media (max-width: 810px) {
     > div{
         > h1 {

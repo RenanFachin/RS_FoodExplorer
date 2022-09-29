@@ -12,7 +12,7 @@ export const Container = styled.button`
 
     padding: 1.2rem 3.2rem;
 
-    &disabled{
+    &:disabled{
         opacity: 0.5;
     }
 `;
