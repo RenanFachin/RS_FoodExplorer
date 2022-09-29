@@ -22,6 +22,11 @@ function AuthProvider({ children }){
             // Obtendo apenas o user e o token de dentro da resposta vindo do api
             const { user, token } = responseAPI.data
 
+            // Armazenando no localStorage o usuário e o token
+            // Localstorage só aceita textos e user é um objeto, então, é preciso converter -> JSON.stringify(user)
+            localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+            localStorage.setItem("@foodexplorer:token", token)
+
             // Inserindo o token no cabeçalho de todas as requisições
             api.defaults.headers.authorization = `Bearer ${token}`
 
