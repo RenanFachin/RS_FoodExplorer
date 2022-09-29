@@ -7,8 +7,8 @@ import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
 import GlobalStyles from './styles/global'
 
-// Importando a página que será renderizada na #root
-// import { OrderPage } from './pages/OrderPage/'
+// Importando contexto
+import { AuthProvider } from './hooks/authContext'
 
 // Utilizando a ROUTES
 import { Routes } from './routes'
@@ -19,9 +19,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
     <GlobalStyles/>
 
-    {/* <OrderPage /> */}
-    <Routes />
-    
+    <AuthProvider>
+
+      <Routes />
+      
+    </AuthProvider>
+
     </ThemeProvider>
   </React.StrictMode>
 )

@@ -6,7 +6,23 @@ import { Button } from '../../components/Button'
 
 import { Link } from 'react-router-dom'
 
+// AuthContext
+import { useAuth } from '../../hooks/authContext'
+import { useState } from 'react'
+
 export function SignIn() {
+  // Capturando o email e password com states
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Inicializando o contexto passando como base o MyContext
+  const { signIn } = useAuth();
+
+  function handleSignIn(){
+    // Chamando a função signIn vinda do hook.
+    // signIn recebe email e password como dados
+    signIn({email, password})
+  }
 
   return (
     <Container>
@@ -29,6 +45,7 @@ export function SignIn() {
       label="email"
       placeholder = "exemplo@exemplo.com.br" 
       required
+      onChange={e=> setEmail(e.target.value)}
       />
 
       <Input 
@@ -38,9 +55,13 @@ export function SignIn() {
       placeholder = "No mínimo 6 caracteres"
       minLength = "6" 
       required 
+      onChange={e=> setPassword(e.target.value)}
       />
 
-      <Button title="Entrar"/>
+      <Button 
+      title="Entrar"
+      onClick={handleSignIn}
+      />
         
       <Link to='/register'>
         Criar uma conta
