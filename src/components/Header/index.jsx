@@ -10,9 +10,11 @@ import { RiAdminLine } from 'react-icons/ri'
 // Importando o hook de autenticação
 import { useAuth } from '../../hooks/authContext'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
 
-export function Header(){
+export function Header({search}){
     // acessando a função signOut do useAuth
     const { user, signOut } = useAuth()
 
@@ -26,6 +28,8 @@ export function Header(){
         signOut()
         navigate("/")
     }
+
+
 
     return(
         <Container>
@@ -41,17 +45,12 @@ export function Header(){
                 <h2>food explorer</h2>
             </Logo>
 
-            {/* <Favorites> */}
-                {/* <Link to='/OrderHistory'>Histórico de Pedidos</Link>  */}
-                {/* <Link to='/profile'>Meu perfil</Link>  */}
-            {/* </Favorites> */}
-
-
             <Search>
             {<AiOutlineSearch size={20}/>}
                 <input 
                     placeholder = "Busque pelas opções de pratos"
                     type = "text"
+                    onChange={e => {search(e.target.value)}}
                 />
             </Search>
 

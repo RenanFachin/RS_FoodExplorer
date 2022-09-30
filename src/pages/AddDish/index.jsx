@@ -36,6 +36,29 @@ export function AddDish(){
     }
 
     async function handleNewDish(){
+
+        // Validações
+        if(!title){
+            return alert("Dígite o título do prato")
+        }
+        
+        if(!price){
+            return alert("Adicione um preço ao prato")
+        }
+
+        if(!category){
+            return alert("Adicione uma categoria ao prato")
+        }
+
+        if(!description){
+            return alert("Adicione uma descrição para o prato que deseja adicionar ao cardápio")
+        }
+
+
+        if(newIngredient){
+            return alert("Você deixou um ingrediente no campo para adicionar")
+        }
+        
         api.post("/adminDishes", { title, description, price, category, ingredients })
         alert("Prato criado com sucesso")
         navigate("/")
@@ -80,7 +103,7 @@ export function AddDish(){
                         />
 
                         <Input
-                        label="name" 
+                        label="categoria" 
                         title="Categoria" 
                         type="text" 
                         placeholder="Categoria"
@@ -118,7 +141,6 @@ export function AddDish(){
                         >
                         </textarea>
                     </TextArea>      
-
 
                     <SendFormWithImage>
                         <div className='uploadImage'>

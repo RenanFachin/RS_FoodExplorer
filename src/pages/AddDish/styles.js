@@ -102,8 +102,6 @@ export const InputWrapper = styled.div`
     align-items: center;
     gap: 3.2rem;
     margin-bottom: 3.2rem;
-
-
 `;
 
 export const TextArea = styled.div`

@@ -14,7 +14,6 @@ import { useState } from 'react'
 import { api } from '../../services/api'
 
 export function Edit(){
-
     const navigate = useNavigate()
     
     const [title, setTitle] = useState("")
@@ -45,10 +44,11 @@ export function Edit(){
     }
 
     return(
-        
-        <Container>
-            <Header />
+    
+        <Container>       
 
+            <Header />
+            
             <Main>
                 <ButtonBack>
                     <Link to ='/'>
@@ -142,7 +142,9 @@ export function Edit(){
                 </Form>
             </Main>
 
-            <Footer />
+            <Footer />     
+
         </Container>
+    
     )
 }
