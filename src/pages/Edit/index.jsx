@@ -13,8 +13,22 @@ import { FiUpload } from 'react-icons/fi'
 import { useState } from 'react'
 
 export function Edit(){
+    const [ingredients, setIngredients] = useState([])
+    const [newIngredient, setNewIngredient] = useState("")
+
+
     const [imageFile, setImageFile] = useState(null);
     const [description, setDescription] = useState("");
+
+
+    function handleAddIngredient(){
+        setIngredients(prevState => [...prevState, newIngredient])
+        setNewIngredient("")
+    }
+
+    function handleRemoveIngredient(ingredientDeleted){
+        setIngredients(prevState => prevState.filter(ingredient => ingredient !== ingredientDeleted))
+    }
 
     return(
         
@@ -55,12 +69,24 @@ export function Edit(){
                     </InputWrapper>
 
                     <SectionIngredients>
-                        <NoteItem value="Alface"/>
-                        <NoteItem value="Tomate"/>
-                        <NoteItem value="Tomate"/>
-                        <NoteItem isNew placeholder='Adicionar'/>
-                        <NoteItem isNew placeholder='Adicionar'/>
-                        <NoteItem isNew placeholder='Adicionar'/>
+                        {
+                        ingredients.map((ingredient, index) => (
+                            <NoteItem 
+                            key={String(index)}
+                            value={ingredient}
+                            onClick={() => handleRemoveIngredient(ingredient)}
+                            />
+                            ))
+                        }
+
+                        <NoteItem 
+                        isNew 
+                        placeholder='Adicionar'
+                        onChange={e => setNewIngredient(e.target.value)}
+                        value={newIngredient}
+                        onClick={handleAddIngredient}
+                        />
+
                     </SectionIngredients>
 
                     <TextArea>
