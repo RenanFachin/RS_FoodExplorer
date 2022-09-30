@@ -62,6 +62,14 @@ export function Profile(){
         navigate("/OrderHistory")
     }
 
+    function handleGoToAddDishPage(){
+        navigate("/addDish")
+    }
+
+    function handleGoToEditDishPage(){
+        navigate("/Edit")
+    }
+
     return(
         <Container>
             <Header />
@@ -137,12 +145,12 @@ export function Profile(){
                         </svg>
                     </div>
 
-                        <Button 
+                    <Button 
                         title={"Histórico de pedidos"}
                         onClick={handleGoToOrderHistoryPage}
                         />
-                        <Button title={"Pratos favoritos"}/>
-                        <Button title={"Fale conosco"}/>
+                    <Button title={"Pratos favoritos"}/>
+                    <Button title={"Fale conosco"}/>
                 </section> 
             </Main>
 
@@ -217,12 +225,16 @@ export function Profile(){
                     </svg>
                 </div>
 
+
                     <Button 
-                    title={"adm page"}
-                    onClick={handleGoToOrderHistoryPage}
+                    title={"Adicionar um Prato"}
+                    onClick={handleGoToAddDishPage}
                     />
-                    <Button title={"adm page"}/>
-                    <Button title={"adm page"}/>
+                        
+                    <Button 
+                    title={"Editar um prato"}
+                    onClick={handleGoToEditDishPage}
+                    />
             </section> 
             </Main>
             }

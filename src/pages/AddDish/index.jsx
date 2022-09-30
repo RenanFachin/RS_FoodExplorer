@@ -13,7 +13,7 @@ import { FiUpload } from 'react-icons/fi'
 import { useState } from 'react'
 import { api } from '../../services/api'
 
-export function Edit(){
+export function AddDish(){
 
     const navigate = useNavigate()
     
@@ -26,9 +26,6 @@ export function Edit(){
     const [category, setCategory] = useState("");
 
 
-    const [image, setImage] = useState(null);
-
-
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
         setNewIngredient("")
@@ -38,7 +35,7 @@ export function Edit(){
         setIngredients(prevState => prevState.filter(ingredient => ingredient !== ingredientDeleted))
     }
 
-    async function handleEditDish(){
+    async function handleNewDish(){
         api.post("/adminDishes", { title, description, price, category, ingredients })
         alert("Prato criado com sucesso")
         navigate("/")
@@ -49,6 +46,8 @@ export function Edit(){
         <Container>
             <Header />
 
+ 
+
             <Main>
                 <ButtonBack>
                     <Link to ='/'>
@@ -56,7 +55,7 @@ export function Edit(){
                         Voltar
                     </Link>
 
-                    <h2>Editar prato</h2>
+                    <h2>Adicionar prato</h2>
                 </ButtonBack>
 
                 
@@ -128,7 +127,7 @@ export function Edit(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file" onChange={e => setImage(e.target.files[0])}/>
+                                <input id="image" type="file"/>
                             </div>
                         </label>
                         </div>
@@ -136,7 +135,7 @@ export function Edit(){
                         <Button
                         className='addButton'
                         title="Adicionar pedido"
-                        onClick={handleEditDish}
+                        onClick={handleNewDish}
                         />
                     </SendFormWithImage>
                 </Form>
