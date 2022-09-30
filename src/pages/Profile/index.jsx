@@ -66,6 +66,8 @@ export function Profile(){
         <Container>
             <Header />
 
+            {
+            !user.isAdmin ?
             <Main>
                 <section className='profile-card'>
                     <Form>
@@ -125,7 +127,9 @@ export function Profile(){
                     </Form>
                 </section>
 
+
                 <section className='profile-option'>
+
 
                     <div className='logo-icon'>
                         <svg width="120" height="120" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,9 +143,89 @@ export function Profile(){
                         />
                         <Button title={"Pratos favoritos"}/>
                         <Button title={"Fale conosco"}/>
-                </section>
+                </section> 
             </Main>
 
+            :
+
+            <Main>
+            <section className='profile-card'>
+                <Form>
+                    
+                    <Avatar>
+                        <img 
+                        src={avatar} 
+                        alt="Foto do usuário" 
+                        />
+
+                        <label htmlFor="avatar">
+                            <FiCamera />
+
+                            <input
+                                id="avatar"
+                                type="file"
+                                onChange={handleChangeAvatar}
+                            />
+                        </label>
+                    </Avatar>
+
+                    <InputProfile 
+                    placeholder="Nome"
+                    type="text"
+                    icon={FiUser}
+                    value={name}
+                    onChange={e=> setName(e.target.value)}
+                    />
+
+                    <InputProfile 
+                    placeholder="E-mail"
+                    type="text"
+                    icon={FiMail}
+                    value={email}
+                    onChange={e=> setEmail(e.target.value)}
+                    />
+
+                    <InputProfile 
+                    placeholder="Senha atual"
+                    type="password"
+                    icon={FiLock}
+                    onChange={e=> setPasswordOld(e.target.value)}
+                    />
+
+                    <InputProfile 
+                    placeholder="Nova senha"
+                    type="password"
+                    icon={FiLock}
+                    onChange={e=> setPasswordNew(e.target.value)}
+                    />
+
+                    <Button
+                    title="Salvar alterações"
+                    onClick={handleUpdate}
+                    />
+
+                </Form>
+            </section>
+
+
+            <section className='profile-option'>
+
+
+                <div className='logo-icon'>
+                    <svg width="120" height="120" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.0635 0.306641L25.7096 7.60782V22.2102L13.0635 29.5114L0.417527 22.2102V7.60782L13.0635 0.306641Z" fill="#065E7C"/>
+                    </svg>
+                </div>
+
+                    <Button 
+                    title={"adm page"}
+                    onClick={handleGoToOrderHistoryPage}
+                    />
+                    <Button title={"adm page"}/>
+                    <Button title={"adm page"}/>
+            </section> 
+            </Main>
+            }
         </Container>
     )
 }

@@ -19,6 +19,12 @@ export const Content = styled.div`
 
     padding: 2.4rem 12.3rem;
     margin: auto;
+
+    .adm-header{
+        svg{
+            margin-left: 5rem;
+        }
+    }
 `;
 
 export const Logo = styled(Link)`
