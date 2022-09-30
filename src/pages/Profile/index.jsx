@@ -1,9 +1,16 @@
-import { Container, Main } from './styles'
+// Estilos
+import { Container, Main, Form, Avatar } from './styles'
 
+// Componentes
 import { Header } from '../../components/Header'
 import { Button } from '../../components/Button'
+import { InputProfile }  from '../../components/InputProfile'
 
+// Navegação, states e effect
 import { useNavigate } from 'react-router-dom'
+
+// Icons
+import { FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
 
 export function Profile(){
     
@@ -19,7 +26,53 @@ export function Profile(){
 
             <Main>
                 <section className='profile-card'>
+                    <Form>
+                        
+                        <Avatar>
+                            <img 
+                            src="https://github.com/RenanFachin.png" 
+                            alt="Foto do usuário" 
+                            />
 
+                            <label htmlFor="avatar">
+                                <FiCamera />
+
+                                <input
+                                    id="avatar"
+                                    type="file"
+                                />
+                            </label>
+                        </Avatar>
+
+                        <InputProfile 
+                        placeholder="Nome"
+                        type="text"
+                        icon={FiUser}
+                        />
+
+                        <InputProfile 
+                        placeholder="E-mail"
+                        type="text"
+                        icon={FiMail}
+                        />
+
+                        <InputProfile 
+                        placeholder="Senha atual"
+                        type="password"
+                        icon={FiLock}
+                        />
+
+                        <InputProfile 
+                        placeholder="Nova senha"
+                        type="password"
+                        icon={FiLock}
+                        />
+
+                        <Button
+                        title="Salvar alterações"
+                        />
+
+                    </Form>
                 </section>
 
                 <section className='profile-option'>
@@ -38,6 +91,7 @@ export function Profile(){
                         <Button title={"Fale conosco"}/>
                 </section>
             </Main>
+
         </Container>
     )
 }

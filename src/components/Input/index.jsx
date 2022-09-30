@@ -7,7 +7,8 @@ export function Input({label, title, ...rest}){
                 {title}
             </label>
 
-            <input id={label} {...rest} />
+            <input id={label} 
+            {...rest} />
         </Container>
     )
 }

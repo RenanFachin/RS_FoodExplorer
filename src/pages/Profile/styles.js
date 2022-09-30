@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -9,7 +8,7 @@ export const Container = styled.div`
     grid-template-rows: 10.4rem auto 7.2rem;
     grid-area: 
     "header"
-    "main"
+    "main";
 `;
 
 export const Main = styled.main`
@@ -53,3 +52,73 @@ export const Main = styled.main`
     }
 `;
 
+export const Form = styled.form`
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // Centralizando
+    width: 80%;
+    margin: 6rem auto;
+
+    button{
+        margin-top: 2rem;
+    }
+
+    > div {
+        border: 2px solid transparent;
+
+        &:focus-within{
+        border: 2px solid ${({theme}) => theme.COLORS.GRAY_300};
+        }
+    }
+
+    > div:nth-child(4) {
+        margin-top: 2rem;
+    }
+
+`;
+
+export const Avatar = styled.div`
+    position: relative;
+    margin: 0 auto 3.2rem;
+
+    width: 17rem;
+    height: 17rem;
+
+    >img {
+        width: 17rem;
+        height: 17rem;
+        border-radius: 50%;
+    }
+
+    > label {
+        width: 4rem;
+        height: 4rem;
+
+        background-color: ${({theme})=> theme.COLORS.PROFILE_BUTTONS};
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            color: ${({theme})=> theme.COLORS.GRAY_100};
+        }
+    }
+`;
