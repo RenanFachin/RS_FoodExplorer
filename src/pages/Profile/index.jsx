@@ -1,5 +1,6 @@
 // Estilos
 import { Container, Main, Form, Avatar } from './styles'
+import avatarPlaceholder from '../../../src/assets/svg/avatar.svg'
 
 // Componentes
 import { Header } from '../../components/Header'
@@ -8,6 +9,10 @@ import { InputProfile }  from '../../components/InputProfile'
 
 // Navegação, states e effect
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useAuth } from '../../hooks/authContext'
+
+import { api } from '../../services/api'
 
 // Icons
 import { FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
@@ -15,6 +20,43 @@ import { FiUser, FiMail, FiLock, FiCamera } from 'react-icons/fi'
 export function Profile(){
     
     const navigate = useNavigate()
+
+    // Preenchendo o state com o valor do banco de dados
+    // Acessando o usuário
+    const { user, updateProfile } = useAuth();
+
+    const [name, setName] = useState(user.name)
+    const [email, setEmail] = useState(user.email)
+    const [passwordOld, setPasswordOld] = useState()
+    const [passwordNew, setPasswordNew] = useState()
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/avatarFiles/${user.avatar}` : avatarPlaceholder;
+
+    const [avatar, setAvatar] = useState(avatarUrl)
+    const [avatarFile, setAvatarFile] = useState("null")
+
+    async function handleUpdate(){
+        // Criando um objeto user para receber as novas informações
+        const user = {
+            name,
+            email,
+            password: passwordNew,
+            old_password: passwordOld
+        }
+
+        await updateProfile({ user, avatarFile })
+    }
+
+    function handleChangeAvatar(event){
+        // Pegando o arquivo do evento
+        const file = event.target.files[0]
+
+        setAvatarFile(file);
+
+        // exibindo o novo avatar
+        const imagePreview = URL.createObjectURL(file)
+        setAvatar(imagePreview)
+    }
 
     function handleGoToOrderHistoryPage(){
         navigate("/OrderHistory")
@@ -30,7 +72,7 @@ export function Profile(){
                         
                         <Avatar>
                             <img 
-                            src="https://github.com/RenanFachin.png" 
+                            src={avatar} 
                             alt="Foto do usuário" 
                             />
 
@@ -40,6 +82,7 @@ export function Profile(){
                                 <input
                                     id="avatar"
                                     type="file"
+                                    onChange={handleChangeAvatar}
                                 />
                             </label>
                         </Avatar>
@@ -48,28 +91,35 @@ export function Profile(){
                         placeholder="Nome"
                         type="text"
                         icon={FiUser}
+                        value={name}
+                        onChange={e=> setName(e.target.value)}
                         />
 
                         <InputProfile 
                         placeholder="E-mail"
                         type="text"
                         icon={FiMail}
+                        value={email}
+                        onChange={e=> setEmail(e.target.value)}
                         />
 
                         <InputProfile 
                         placeholder="Senha atual"
                         type="password"
                         icon={FiLock}
+                        onChange={e=> setPasswordOld(e.target.value)}
                         />
 
                         <InputProfile 
                         placeholder="Nova senha"
                         type="password"
                         icon={FiLock}
+                        onChange={e=> setPasswordNew(e.target.value)}
                         />
 
                         <Button
                         title="Salvar alterações"
+                        onClick={handleUpdate}
                         />
 
                     </Form>

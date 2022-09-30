@@ -52,6 +52,37 @@ function AuthProvider({ children }){
         setData({})
     }
 
+    // Alterando os dados
+    async function updateProfile({ user, avatarFile }){
+        try{
+            
+            if(avatarFile){
+                // Fazendo o envio para o back end como se fosse o multiform do insomnia
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("avatar", avatarFile)
+
+                const response = await api.patch("/users/avatar", fileUploadForm);
+                user.avatar = response.data.avatar;
+            }
+
+            // Alterando no banco de dados (método put é para atualizar)
+            await api.put("/users", user)
+            
+            // Atualizando os dados no localstorage
+            localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
+
+            setData({ user, token: data.token })
+            alert("Perfil atualizado")
+
+        } catch(error){
+            if(error.response){
+                alert(error.response.data.message)
+            } else{
+                alert("Não foi possível fazer o login")
+            }
+        }
+    }
+
     useEffect(() => {
         // Buscando as informações que estão no localstorage
         const token = localStorage.getItem("@foodexplorer:token")
@@ -74,7 +105,7 @@ function AuthProvider({ children }){
 
     return (
         // Aqui iremos compartilhar a função de signIn, signOut e o usuário com todos os children(Rotas)
-        <AuthContext.Provider value={{ signIn, user: data.user, signOut }}>
+        <AuthContext.Provider value={{ signIn, user: data.user, signOut, updateProfile }}>
             {/* o CHILDREN vai ser o Routes do main.jsx */}
             { children }
         </AuthContext.Provider>
