@@ -70,6 +70,11 @@ export function Profile(){
         navigate("/Edit")
     }
 
+    function handleGoToDeleteDishPage(){
+        navigate("/delDish")
+    }
+    
+
     return(
         <Container>
             <Header />
@@ -234,6 +239,11 @@ export function Profile(){
                     <Button 
                     title={"Editar um prato"}
                     onClick={handleGoToEditDishPage}
+                    />
+
+                    <Button 
+                    title={"Deletar um prato"}
+                    onClick={handleGoToDeleteDishPage}
                     />
             </section> 
             </Main>

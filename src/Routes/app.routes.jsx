@@ -7,6 +7,7 @@ import { OrderHistory } from '../pages/OrderHistory'
 import { OrderPage } from '../pages/OrderPage'
 import { Edit } from '../pages/Edit'
 import { AddDish } from '../pages/AddDish'
+import { DeleteDish } from '../pages/DeleteDish'
 import { Profile } from '../pages/Profile'
 /*
 
@@ -23,6 +24,7 @@ export function AppRoutes(){
             <Route path="/orderpage" element={<OrderPage />} />
             <Route path="/edit/" element={<Edit />} />
             <Route path="/addDish/" element={<AddDish />} />
+            <Route path="/delDish/" element={<DeleteDish />} />
             <Route path="/profile" element={<Profile />} />
             {/* Colocar os outros */}
         </Routes>
