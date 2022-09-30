@@ -28,7 +28,7 @@ function AuthProvider({ children }){
             localStorage.setItem("@foodexplorer:token", token)
 
             // Inserindo o token no cabeçalho de todas as requisições
-            api.defaults.headers.authorization = `Bearer ${token}`
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
             // Armazenando no state o usuário e seu token
             setData({user, token})
@@ -60,7 +60,7 @@ function AuthProvider({ children }){
         // Caso token e user estejam armazenados no localstorage
         if(token && user){
             // Inserindo o token no cabeçalho de todas as requisições
-            api.defaults.headers.authorization = `Bearer ${token}`
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
             // Armazenando no state o usuário e seu token
             setData({

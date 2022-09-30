@@ -86,6 +86,12 @@ export const Profile = styled.button`
         color: ${({theme}) => theme.COLORS.WHITE};
         width: 3.2rem;
         height: 3.2rem;
+
+        transition: all 400ms ease;
+
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
 
@@ -99,5 +105,11 @@ export const Logout = styled.button`
         color: ${({theme}) => theme.COLORS.WHITE};
         width: 3.2rem;
         height: 3.2rem;
+
+        transition: all 400ms ease;
+
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
