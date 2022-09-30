@@ -15,7 +15,6 @@ import { useState } from 'react'
 import { itemsDatabase } from '../../utils/database'
 
 
-
 export function Details(){
         // Começando em 1 a quantidade
         const [quantity, setQuantity] = useState(1)
