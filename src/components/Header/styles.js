@@ -27,6 +27,7 @@ export const Logo = styled(Link)`
     gap: 1.2rem;
 
     >h2{
+        font-size: 2.4rem;
         font-weight: 700;
         font-family: 'Roboto', sans-serif;
         line-height: 3rem;
@@ -44,7 +45,7 @@ export const Favorites = styled.div`
 `;
 
 export const Search = styled.div`
-    min-width: 41rem;
+    min-width: 50rem;
 
     display: flex;
     align-items: center;
@@ -73,6 +74,19 @@ export const Search = styled.div`
         fill: ${({theme}) => theme.COLORS.GRAY_100};;
     }
 
+`;
+
+export const Profile = styled.button`
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    
+    > svg {
+        color: ${({theme}) => theme.COLORS.WHITE};
+        width: 3.2rem;
+        height: 3.2rem;
+    }
 `;
 
 export const Logout = styled.button`
