@@ -1,18 +1,17 @@
-import { Container, Content, Logo, Favorites, Search, Profile, Logout} from './styles'
+// Import de estilizações
+import { Container, Content, Logo, Search, Profile, Logout} from './styles'
 
+// import de componentes
 import { HeaderButton } from '../../components/HeaderButton/'
 
-// Impor de icons
+// Import de icons
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FiLogOut, FiUser } from 'react-icons/fi'
 import { RiAdminLine } from 'react-icons/ri'
 
 // Importando o hook de autenticação
 import { useAuth } from '../../hooks/authContext'
-
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
 
 export function Header({search}){
     // acessando a função signOut do useAuth
@@ -20,16 +19,18 @@ export function Header({search}){
 
     const navigate = useNavigate()
 
+    function handleGoBack(){
+        navigate("/")
+    }
+
     function handleGoToProfilePage(){
         navigate("/profile")
     }
 
     function handleWrapperSignOut(){
         signOut()
-        navigate("/")
+        handleGoBack()
     }
-
-
 
     return(
         <Container>
@@ -53,8 +54,6 @@ export function Header({search}){
                     onChange={e => {search(e.target.value)}}
                 />
             </Search>
-
-        
 
             <HeaderButton title="Meu pedido (0)"/>        
 

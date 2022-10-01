@@ -1,12 +1,13 @@
+// Import de estilizações
 import { Container, Main } from './styles'
 
+// Import de componentes
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Card } from '../../components/Card/'
 import { Section } from '../../components/Section/'
 
-// import { mainCourse, dessert, drink } from '../../../src/utils/database'
-
+// Import de hooks e api
 import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
 

@@ -1,5 +1,7 @@
+// Import de estilizações
 import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage } from './styles'
 
+// Import de componentes
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Input } from '../../components/Input'
@@ -7,13 +9,15 @@ import { NoteItem } from '../../components/NoteItem'
 import { Button } from '../../components/Button'
 import { Error401 } from '../../components/Error401'
 
-import { Link, useNavigate } from 'react-router-dom'
+// Import de ícones
 import { IoIosArrowBack } from 'react-icons/io'
 import { FiUpload } from 'react-icons/fi'
 
+// Import de Hooks e api
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { api } from '../../services/api'
 import { useAuth } from '../../hooks/authContext'
+import { api } from '../../services/api'
 
 
 export function Edit(){
@@ -23,14 +27,10 @@ export function Edit(){
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
+    const [category, setCategory] = useState("");
 
     const [ingredients, setIngredients] = useState([])
     const [newIngredient, setNewIngredient] = useState("")
-    const [category, setCategory] = useState("");
-
-
-    const [image, setImage] = useState(null);
-
 
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
@@ -134,7 +134,7 @@ export function Edit(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file" onChange={e => setImage(e.target.files[0])}/>
+                                <input id="image" type="file"/>
                             </div>
                         </label>
                         </div>

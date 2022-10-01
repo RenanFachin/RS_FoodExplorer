@@ -1,3 +1,4 @@
+// Import de estilizações
 import { Container } from './styles'
 
 export function OrderItem({qntd, title, price}){

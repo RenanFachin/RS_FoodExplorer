@@ -5,13 +5,11 @@ export const Container = styled.div`
 
     width: 100%;
     min-height: 7.2rem;
-    /* padding-top: 2.8rem; */
     background-color: ${({theme}) => theme.COLORS.BRACKGROUND_HEADER};
 `;
 
 export const Content = styled.div`
     max-width: 136.8rem;
-    /* background-color: red; */
     margin: auto;
 
     padding: 2.4rem 12.3rem;

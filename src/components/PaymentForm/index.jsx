@@ -1,8 +1,9 @@
+// Import de estilizações
 import { Container } from './styles'
 
+// Import de componentes
 import { Input } from '../Input'
 import { Button } from '../Button'
-
 
 export function PaymentForm(){
 

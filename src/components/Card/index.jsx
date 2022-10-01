@@ -1,12 +1,16 @@
+// Import de estilização
 import { Container } from './styles'
 
+// Import de componentes
 import { Button } from '../Button/index'
 
+// Import de Icons
 import { BiMinus, BiPlus} from 'react-icons/bi'
 import { AiOutlineHeart } from 'react-icons/ai'
 
+// Imports estratégicos
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export function Card({data, ...rest}){

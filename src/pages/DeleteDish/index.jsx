@@ -1,18 +1,21 @@
+// Import de estilizações
 import { Container, Main } from './styles'
 
+// Import de componentes
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { Error401 } from '../../components/Error401'
 
-import { api } from '../../services/api'
+// Imports de hooks e api
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useAuth } from '../../hooks/authContext'
+import { api } from '../../services/api'
 
 export function DeleteDish(){
-    const {user} = useAuth()
+    const { user } = useAuth()
     const navigate = useNavigate()
 
     const [dish, setDish] = useState([])

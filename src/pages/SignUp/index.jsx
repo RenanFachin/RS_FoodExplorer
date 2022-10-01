@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // Conexão e configurações da API
-import {api} from '../../services/api'
+import { api } from '../../services/api'
 
 // Import de estilizações
 import { Container, Form } from './styles';
@@ -20,16 +20,31 @@ export function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const [message, setMessage] = useState("")
+
     // Inicilizando o navigate
     const navigate = useNavigate();
 
     function handleSignUp(){
+        // Validando o email
+        const regEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
 
+        // Vendo se todos os campos foram preenchidos
         if(!name || !email || !password){
             return alert("Preencha todos os campos!");
         }
 
-        // Acessando a api
+        // Validação de password
+        if(password.length<6){
+            return alert("Por favor, sua senha precisa ter mais de 6 caracteres")
+        }
+
+        // Validação de email
+        if(!regEx.test(email)){
+            return alert("o email inserido não é valido")
+        }
+
+        // Acessando a api e utilizando o método de create de users
         api.post("/users", { name, email, password })
         .then(()=>{
             alert("Usuário cadastrado com sucesso!")
@@ -61,7 +76,6 @@ export function SignUp(){
                 type="text" 
                 label="nome"
                 placeholder = "Exemplo: Maria da Silva" 
-                // required
                 onChange={e => setName(e.target.value)}
                 />
 
@@ -70,7 +84,6 @@ export function SignUp(){
                 type="email" 
                 label="email"
                 placeholder = "exemplo@exemplo.com" 
-                // required
                 onChange={e => setEmail(e.target.value)}
                 />
 
@@ -79,8 +92,7 @@ export function SignUp(){
                 label="password"
                 type="password" 
                 placeholder = "No mínimo 6 caracteres"
-                // minLength = "6" 
-                // required
+
                 onChange={e => setPassword(e.target.value)}
                 />
 
@@ -88,9 +100,7 @@ export function SignUp(){
                 onClick={handleSignUp}
                 title={"Criar conta"}
                 />
-                   
-                
-                
+
                 <Link to='/'>
                     Já tenho uma conta
                 </Link>

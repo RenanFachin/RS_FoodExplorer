@@ -1,3 +1,4 @@
+// Import de estilizações
 import { Container } from './styles';
 
 export function Input({label, title, ...rest}){
@@ -7,8 +8,10 @@ export function Input({label, title, ...rest}){
                 {title}
             </label>
 
-            <input id={label} 
-            {...rest} />
+            <input 
+            id={label} 
+            {...rest} 
+            />
         </Container>
     )
 }

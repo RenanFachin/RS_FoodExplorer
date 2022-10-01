@@ -1,19 +1,22 @@
+// Import de estilizações
 import { Container, Main, ButtonBack, AllIngredientCards, Content } from './style';
 
+// Import de componentes
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Button } from '../../components/Button/'
 import { IngredientCard } from '../../components/IngredientCard/'
 
+// Import de icones
 import { IoIosArrowBack } from 'react-icons/io'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 
+// Import de hooks e api
 import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react'
 
-
+// Import de database p/ teste
 import { itemsDatabase } from '../../utils/database'
-
 
 export function Details(){
         // Começando em 1 a quantidade

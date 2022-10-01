@@ -1,5 +1,7 @@
+// import de estilizações
 import { Container, Main } from './style';
 
+// Import de componentes
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 

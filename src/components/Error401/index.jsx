@@ -1,7 +1,10 @@
+// Import de estilização
 import { Container } from './styles'
 
+// Import de componentes
 import { Button } from '../Button'
 
+// Imports estratégicos
 import { useNavigate } from 'react-router-dom'
 import errorImg from '../../assets/ghost-img.png'
 

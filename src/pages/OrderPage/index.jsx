@@ -1,16 +1,21 @@
+// Import de estilizações
 import { Container, Main } from './style';
 
+// Import de componentes
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { OrderItem } from '../../components/OrderItem'
 import { PaymentForm } from '../../components/PaymentForm'
 
-import qrCode from '../../assets/svg/qr-code.svg'
-
+// Import de icones
 import { BsXDiamond } from 'react-icons/bs'
 import { AiOutlineCreditCard } from 'react-icons/ai'
 
+// Import de hooks
 import { useState } from 'react';
+
+// Import de imagens
+import qrCode from '../../assets/svg/qr-code.svg'
 
 export function OrderPage(){
     const [paymentType, setPaymentType] = useState('card');
@@ -19,8 +24,7 @@ export function OrderPage(){
     const cardSelected = paymentType === 'card';
 
     function handlePix() {
-        setPaymentType('pix');
-        
+        setPaymentType('pix');  
     }
     
     function handleCreditCard() {

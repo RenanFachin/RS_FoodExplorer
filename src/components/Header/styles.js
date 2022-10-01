@@ -40,15 +40,15 @@ export const Logo = styled(Link)`
     }
 `;
 
-export const Favorites = styled.div`
-    > a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: ${({theme}) => theme.COLORS.GRAY};
-    text-decoration: none;
-    }   
-`;
+// export const Favorites = styled.div`
+//     > a {
+//     font-family: 'Roboto', sans-serif;
+//     font-size: 1.6rem;
+//     font-weight: 400;
+//     color: ${({theme}) => theme.COLORS.GRAY};
+//     text-decoration: none;
+//     }   
+// `;
 
 export const Search = styled.div`
     min-width: 50rem;

@@ -1,6 +1,8 @@
+// Import de estilizações
 import { Container } from './styles'
-import { FiPlus, FiX } from 'react-icons/fi'
 
+// Import de icones
+import { FiPlus, FiX } from 'react-icons/fi'
 
 export function NoteItem({isNew, value, onClick, ...rest}){
     return(

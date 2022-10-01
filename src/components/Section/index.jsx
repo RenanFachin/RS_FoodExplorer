@@ -1,6 +1,10 @@
+// Import de estilizações
 import { Container, Slider } from './styles'
+
+// Import de icones
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
+// Imports para o slider
 import { useRef } from 'react';
 
 export function Section({type, children}){
@@ -10,13 +14,13 @@ export function Section({type, children}){
         event.preventDefault();
     
         slider.current.scrollLeft -= slider.current.offsetWidth;
-      }
+    }
     
-      function handleRightClickSlider(event) {
+    function handleRightClickSlider(event) {
         event.preventDefault();
     
         slider.current.scrollLeft += slider.current.offsetWidth;
-      }
+    }
 
     return(
         <Container>
