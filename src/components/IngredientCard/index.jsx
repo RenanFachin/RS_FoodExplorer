@@ -1,18 +1,38 @@
 // Import de estilizações
 import { Container } from './styles'
 
-export function IngredientCard({data}){
+import canela from '../../assets/Ingredientes/canela.png'
+import maçã from '../../assets/Ingredientes/maçã.png'
+import whiskey from '../../assets/Ingredientes/whiskey.png'
 
-    const imagem = `../../../src/assets/Ingredientes/${data.title}.png`
+export function IngredientCard({ingredient}){
+
+    function fetchImageIngreedient(name){
+        let ingredient = name.toLowerCase().trim()
+
+        let result
+
+        switch(ingredient){
+            case "canela":
+                return result = canela
+            case "maçã":
+                return result = maçã
+            case "whiskey":
+                return result = whiskey
+        }
+        
+    }
+
+    let result = fetchImageIngreedient(ingredient)
 
     return(
         <Container>
             <div className='ingredients-wrapper'>
             <img 
-            src={imagem} 
+            src={result} 
             alt=""
             />
-                <span>{data.title}</span>
+                <span>{ingredient}</span>
             </div>   
         </Container>
     )

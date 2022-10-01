@@ -13,7 +13,8 @@ import { BiMinus, BiPlus } from 'react-icons/bi'
 
 // Import de hooks e api
 import { Link, useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { api } from '../../services/api'
 
 // Import de database p/ teste
 import { itemsDatabase } from '../../utils/database'
@@ -21,9 +22,15 @@ import { itemsDatabase } from '../../utils/database'
 export function Details(){
         // Começando em 1 a quantidade
         const [quantity, setQuantity] = useState(1)
+        const [data, setData] = useState(null)
+        const params = useParams()
 
-        const { id } = useParams(); // Buscando o que ta na url
-        const data = itemsDatabase.find((item) => item.id === Number(id));
+        // console.log(data)
+        const imageURL = data && `${api.defaults.baseURL}/files/dishFiles/${data.image}`
+        
+
+        // const { id } = useParams(); // Buscando o que ta na url
+        // const data = itemsDatabase.find((item) => item.id === Number(id));
 
         function handleAddItem() {
             setQuantity (quantity+1)
@@ -36,12 +43,21 @@ export function Details(){
             }
         }
 
+        useEffect(() => {
+            async function fetchDish(){
+                const responseAPI = await api.get(`/dishes/${params.id}`)
+                setData(responseAPI.data)
+            }
+
+            fetchDish()
+        }, [])
 
     return(
         <Container>
             <Header />
 
-
+            {
+            data &&
             <Main>
 
             <ButtonBack>
@@ -51,9 +67,9 @@ export function Details(){
                     </Link>
             </ButtonBack>
             
-
+            
             <Content>
-            <img src={data.image} alt="Imagem do prato" />
+            <img src={imageURL} alt="Imagem do prato" />
 
             <div className='details'>
                 <div className='details-wrapper'>
@@ -61,15 +77,18 @@ export function Details(){
                     <p>{data.description}</p>
                 </div>
             
-                {data.ingredients && (
+
                 <AllIngredientCards>
-                {data.ingredients.map ((ingredient) => (
+                {
+                data.ingredients.map ((ingredient) => (
                     <IngredientCard 
-                    data={ingredient}
+                    key={String(ingredient.id)}
+                    ingredient={ingredient.name}
                     />
-                ))}
+                ))
+                }
                 </AllIngredientCards>
-                )}
+                
 
 
                 <div className='AmountItemsAndBuy-wrapper'>
@@ -101,9 +120,10 @@ export function Details(){
             </div>
 
             </Content>
+            
 
             </Main>
-
+            }
 
             <Footer />
         </Container>
