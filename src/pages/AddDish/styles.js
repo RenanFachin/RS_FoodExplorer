@@ -153,25 +153,3 @@ export const SendFormWithImage = styled.div`
         width: 40%;
     }
 `;
-
-export const MainUser = styled.main`
-    grid-area: "main";
-    /* max-width: 136.8rem; */
-    margin: 0 auto;
-    width: 70rem;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2.4rem 12.3rem;
-
-
-    h2 {
-        font-size: 2rem;
-
-        >span{
-            color: ${({theme})=> theme.COLORS.TEXT_DELETE}
-        }
-    }
-`;

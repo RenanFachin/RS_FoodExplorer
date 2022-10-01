@@ -1,10 +1,11 @@
-import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage, MainUser } from './styles'
+import { Container, Main, ButtonBack, Form, InputWrapper, TextArea, SectionIngredients, SendFormWithImage } from './styles'
 
 import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Input } from '../../components/Input'
 import { NoteItem } from '../../components/NoteItem'
 import { Button } from '../../components/Button'
+import { Error401 } from '../../components/Error401'
 
 import { Link, useNavigate } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
@@ -13,6 +14,7 @@ import { FiUpload } from 'react-icons/fi'
 import { useState } from 'react'
 import { api } from '../../services/api'
 import { useAuth } from '../../hooks/authContext'
+
 
 export function Edit(){
     const { user } = useAuth()
@@ -148,13 +150,7 @@ export function Edit(){
 
             :
 
-            <MainUser>
-                <h1>Error 401</h1>
-                <h2>
-                    <span>Oops!</span>
-                </h2>
-                <h3>Você não possui autorização para acessar está página!</h3>
-            </MainUser>
+            <Error401 />
             }
 
             <Footer />     

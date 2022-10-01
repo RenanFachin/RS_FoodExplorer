@@ -157,22 +157,35 @@ export const SendFormWithImage = styled.div`
 
 export const MainUser = styled.main`
     grid-area: "main";
-    /* max-width: 136.8rem; */
     margin: 0 auto;
-    width: 70rem;
-    
+    width: 136.8rem;
+
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 2rem;
-    padding: 2.4rem 12.3rem;
+    gap: 0.8rem;
 
+    img{
+        width: 30rem;
+        height: 30rem;
+    }
 
-    h2 {
-        font-size: 2rem;
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
 
-        >span{
+        h4{
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        h2 {
+        font-size: 5rem;
+
+        > span{
             color: ${({theme})=> theme.COLORS.TEXT_DELETE}
+        }
         }
     }
 `;

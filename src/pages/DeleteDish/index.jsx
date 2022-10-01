@@ -4,6 +4,7 @@ import { Header } from '../../components/Header/'
 import { Footer } from '../../components/Footer/'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
+import { Error401 } from '../../components/Error401'
 
 import { api } from '../../services/api'
 import { useNavigate } from 'react-router-dom'
@@ -65,14 +66,8 @@ export function DeleteDish(){
 
             :
 
-            <Main>
+            <Error401 />
 
-            <h1>Error 401</h1>
-            <h2>
-                <span>Oops!</span>
-            </h2>
-            <h3>Você não possui autorização para acessar está página!</h3>
-            </Main>
             }
 
             <Footer />     
