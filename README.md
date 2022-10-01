@@ -25,18 +25,18 @@ O projeto será divido em duas partes: `Front-end` e `Back-end`
 
 ## 🎯 Critérios obrigatórios do projeto
 
-- [ ] Um projeto estruturado, com uma boa organização das pastas, divisão de componentes no front-end, etc.
+- [x] Um projeto estruturado, com uma boa organização das pastas, divisão de componentes no front-end, etc.
 - [x] Um arquivo README.md com as especificações sobre como executar o projeto em um ambiente dev.
-- [ ] Os usuários deverão se autenticar para entrar na aplicação através da tela de login, você pode aplicar o que aprendeu nas aulas de autenticação JWT. A autenticação deve ser validada com senha.
+- [x] Os usuários deverão se autenticar para entrar na aplicação através da tela de login, você pode aplicar o que aprendeu nas aulas de autenticação JWT. A autenticação deve ser validada com senha.
 - [ ] O admin irá fazer upload de imagens para cadastrar os pratos.
 - [ ] Fazer o deploy da aplicação
-- [ ] Aplicar conceitos de Clean Code
-- [ ] Os dados do admin, do restaurante e dos usuários serão armazenados em um banco de dados.
-- [ ] Possibilidade de fazer uma busca pelo nome do prato, pelos ingredientes ou por prato favorito
-- [ ] Consumir uma API própria
+- [x] Aplicar conceitos de Clean Code
+- [x] Os dados do admin, do restaurante e dos usuários serão armazenados em um banco de dados.
+- [x] Possibilidade de fazer uma busca pelo nome do prato, pelos ingredientes ou por prato favorito
+- [x] Consumir uma API própria
 - [ ] Aplicação responsiva
-- [ ] Aplicar algumas animações, transições e transformações
-- [ ] Atender ao modelo proposto pelo Figma
+- [x] Aplicar algumas animações, transições e transformações
+- [x] Atender ao modelo proposto pelo Figma
 
 ## 🎯 Critérios opcionais do projeto
 
@@ -46,6 +46,10 @@ O projeto será divido em duas partes: `Front-end` e `Back-end`
 - [ ] O usuário poderá marcar um prato como favorito, basta clicar no coração que aparece ao lado de cada um;
 - [ ] O admin irá visualizar e controlar o status de cada pedido, por um campo do tipo select. Os pedidos irão aparecer em uma tabela ao clicar em Pedidos;
 - [ ] Já que o projeto está em dark mode, você pode aplicar a versão light mode;
+- [x] Criar página de profile para usuário com as opções de trocar dados de nome, email e senha. Além de poder acessar informações (histórico de pedidos, pratos favoritos e fale conosco);
+- [x] Criar página de profile para adm com opçoes de trocar dados da conta (nome, email e senha). Além de poder acessar página de criação de prato, edição de prato e deletar pratos;
+- [x] Criar uma página de não autorizado (error 401) para que usuários não possam acessar páginas da administração
+- [x] Validações de email válido mais complexos, validações de password e de todos os campos preenchidos
 
 ### 📘 Ferramentas/Bibliotecas utilizadas
   - Biblioteca para criação de interfaces: `reactJS`

@@ -20,11 +20,18 @@ export function Card({data, ...rest}){
     const [quantity, setQuantity] = useState(1)
 
     function handleAddItem() {
+        const limitOfSameItemsInCart = quantity >= 15
+
+        if(limitOfSameItemsInCart){
+            return alert("Ei, você está ultrapassando o limite de um mesmo item em um pedido")
+        }
+
         setQuantity (quantity+1)
     }
 
     function handleRemoveItem() {
         setQuantity (quantity-1)
+        
         if(quantity == 1){
             setQuantity(1)
         }
@@ -58,7 +65,9 @@ export function Card({data, ...rest}){
                         <BiMinus />
                     </button>
 
-                    <span>0{quantity}</span>
+                    <span>
+                        {quantity<10 ? `0${quantity}` : quantity}
+                    </span>
                     
                     <button 
                     className='PlusItem'
