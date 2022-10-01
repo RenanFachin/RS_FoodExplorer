@@ -62,9 +62,16 @@ export function Card({data, ...rest}){
 
     return(
         <Container {...rest}>
+            {
+            ! user.isAdmin ?
             <button className='FavoriteDish' >
                 <AiOutlineHeart />
             </button>
+
+            : 
+
+            <div />
+            }
 
             <img 
             src={imagem} 

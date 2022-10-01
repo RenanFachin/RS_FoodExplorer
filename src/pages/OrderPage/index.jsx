@@ -41,7 +41,7 @@ export function OrderPage(){
 
                     <OrderItem 
                     qntd={1}
-                    title={"PomoBourbon"}
+                    title={"Torradas de Parma"}
                     price={79.97}
                     />
 

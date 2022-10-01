@@ -20,7 +20,6 @@ export function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const [message, setMessage] = useState("")
 
     // Inicilizando o navigate
     const navigate = useNavigate();

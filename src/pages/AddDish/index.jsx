@@ -65,9 +65,22 @@ export function AddDish(){
             return alert("Você deixou um ingrediente no campo para adicionar")
         }
         
-        api.post("/adminDishes", { title, description, price, category, ingredients })
-        alert("Prato criado com sucesso")
-        navigate("/")
+        // api.post("/adminDishes", { title, description, price, category, ingredients })
+        // alert("Prato criado com sucesso")
+        // navigate("/")
+
+         // Acessando a api e utilizando o método de create de users
+         api.post("/adminDishes", { title, description, price, category, ingredients })
+         .then(()=>{
+             alert("Prato criado com sucesso!")
+             navigate("/")
+         })
+         .catch(error => {
+             if(error.response){
+                 alert("Não foi possível cadastrar")
+             }
+         }) 
+
     }
 
     return(
