@@ -65,6 +65,10 @@ export const Form = styled.form`
         background-color: ${({theme})=> theme.COLORS.BACKGROUND};
     }
 
+    input:nth-child(1) {
+        background: transparent;
+    }
+
     .uploadImage {
 
     #file {
@@ -102,6 +106,10 @@ export const InputWrapper = styled.div`
     align-items: center;
     gap: 3.2rem;
     margin-bottom: 3.2rem;
+
+    div {
+        background-color: transparent;
+    }
 `;
 
 export const TextArea = styled.div`

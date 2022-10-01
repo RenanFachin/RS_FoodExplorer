@@ -4,7 +4,8 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    margin-left: 0.5rem;
+    padding: 0.2rem;
 
     // Background condicional:
     background-color: ${({isNew}) => isNew? "transparent" : "rgba(255, 255, 255, 0.1)"};
@@ -12,7 +13,7 @@ export const Container = styled.div`
     color: ${({theme}) => theme.COLORS.WHITE};
 
     // Borda condicional:
-    border: ${({theme, isNew}) => isNew ? `1px dashed ${theme.COLORS.GRAY_300}` : 'none'};
+    border: ${({theme, isNew}) => isNew ? `2px dashed ${theme.COLORS.GRAY_300}` : 'none'};
 
     /* margin-bottom: 0.8rem; */
     border-radius: 1rem;
@@ -32,12 +33,11 @@ export const Container = styled.div`
     }
 
     > input {
-        height: 3.3rem;
-        max-width: 11rem;
-        padding: 1rem;
+        height: 3rem;
+        max-width: 13rem;
+        padding: 2rem;
         color: ${({theme}) => theme.COLORS.WHITE};
         border: none;
-        background: none;
-        
+        background: transparent;
     }
 `;
