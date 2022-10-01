@@ -2,7 +2,7 @@
 import { Container } from './styles'
 
 // Import de componentes
-import { Button } from '../Button/index'
+import { Button } from '../Button'
 
 // Import de Icons
 import { BiMinus, BiPlus} from 'react-icons/bi'
@@ -10,14 +10,23 @@ import { AiOutlineHeart } from 'react-icons/ai'
 
 // Imports estratégicos
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/authContext'
+import { api } from '../../services/api'
 
 
 export function Card({data, ...rest}){
     const imagem = `../../../src/assets/Pratos/${data.title}.png`
 
+    const navigate = useNavigate()
+    const { user } = useAuth()
+
     // Começando em 1 a quantidade
     const [quantity, setQuantity] = useState(1)
+
+    function handleRefreshPage(){
+        navigate(0)
+    }
 
     function handleAddItem() {
         const limitOfSameItemsInCart = quantity >= 15
@@ -31,11 +40,25 @@ export function Card({data, ...rest}){
 
     function handleRemoveItem() {
         setQuantity (quantity-1)
-        
+
         if(quantity == 1){
             setQuantity(1)
         }
     }
+
+    function handleGoToEditPage(){
+        navigate('/edit')
+    }
+
+    async function handleDeleteItem(){
+        const confirm = window.confirm("Deseja realmente deletar o prato do cardápio?")
+    
+        if(confirm){
+            await api.delete(`/adminDishes/${data.id}`)
+            handleRefreshPage()
+        }
+    }
+
 
     return(
         <Container {...rest}>
@@ -56,6 +79,9 @@ export function Card({data, ...rest}){
 
             <h4>R$ {data.price}</h4>
 
+
+            {
+            !user.isAdmin ?
             <div className='AmountItemsAndBuy-wrapper'>
                 <div className='Amount'>
                     <button 
@@ -82,6 +108,21 @@ export function Card({data, ...rest}){
                 
                 />
             </div>
+
+            :
+
+            <div className='admItensController'>
+                <Button 
+                title="Deletar"
+                onClick={handleDeleteItem}
+                />
+
+                <Button 
+                title="editar"
+                onClick={handleGoToEditPage}
+                />
+            </div>
+            }
         </Container>
     )    
 }

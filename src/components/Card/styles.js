@@ -97,4 +97,9 @@ export const Container = styled.div`
 
         }
     }
+
+    .admItensController{
+        display: flex;
+        gap: 2rem;
+    }
 `;
