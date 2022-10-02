@@ -11,7 +11,7 @@ import GlobalStyles from './styles/global'
 import { AuthProvider } from './hooks/authContext'
 
 // Utilizando a ROUTES
-import { Routes } from './routes/index';
+import { Routes } from './routes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
