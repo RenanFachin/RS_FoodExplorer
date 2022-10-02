@@ -33,6 +33,8 @@ export function Edit(){
     const [ingredients, setIngredients] = useState([])
     const [newIngredient, setNewIngredient] = useState("")
 
+    const [imageFile, setImageFile] = useState(null);
+
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
         setNewIngredient("")
@@ -44,6 +46,12 @@ export function Edit(){
 
     async function handleEditDish(){
         api.put(`/adminDishes/${params.id}`, { title, description, price, category, ingredients })
+
+        const formData = new FormData();
+        formData.append("image", imageFile);
+
+        api.patch(`/adminDishes/dishImage/${params.id}`, formData)
+        
         alert("Prato modificado com sucesso")
         navigate("/")
     }
@@ -154,7 +162,11 @@ export function Edit(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file"/>
+                                <input 
+                                id="image" 
+                                type="file"
+                                onChange={e => setImageFile(e.target.files[0])}
+                                />
                             </div>
                         </label>
                         </div>
