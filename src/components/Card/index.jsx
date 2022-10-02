@@ -16,7 +16,8 @@ import { api } from '../../services/api'
 
 
 export function Card({data, ...rest}){
-    const imagem = `../../../src/assets/Pratos/${data.title}.png`
+    // const imagem = `../../../src/assets/Pratos/${data.title}.png`
+    const imageURL = `${api.defaults.baseURL}/files/dishFiles/${data.image}`;
 
     const navigate = useNavigate()
     const { user } = useAuth()
@@ -47,7 +48,7 @@ export function Card({data, ...rest}){
     }
 
     function handleGoToEditPage(){
-        navigate('/edit')
+        navigate(`/edit/${data.id}`)
     }
 
     async function handleDeleteItem(){
@@ -74,7 +75,7 @@ export function Card({data, ...rest}){
             }
 
             <img 
-            src={imagem} 
+            src={imageURL} 
             alt=""
             />
 

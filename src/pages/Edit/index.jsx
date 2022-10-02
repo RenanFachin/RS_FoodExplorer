@@ -14,8 +14,8 @@ import { IoIosArrowBack } from 'react-icons/io'
 import { FiUpload } from 'react-icons/fi'
 
 // Import de Hooks e api
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { useAuth } from '../../hooks/authContext'
 import { api } from '../../services/api'
 
@@ -23,6 +23,7 @@ import { api } from '../../services/api'
 export function Edit(){
     const { user } = useAuth()
     const navigate = useNavigate()
+    const params = useParams();
     
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -46,6 +47,21 @@ export function Edit(){
         alert("Prato criado com sucesso")
         navigate("/")
     }
+
+    useEffect(() => {
+        async function fetchDish() {
+          const response = await api.get(`/dishes/${params.id}`)
+    
+          const { title, description, category, price, ingredients } = response.data;
+          setTitle(title);
+          setDescription(description);
+          setCategory(category);
+          setPrice(price);
+          setIngredients(ingredients.map(ingredient => ingredient.name));
+        }
+    
+        fetchDish();
+      }, [])
 
     return(
     
@@ -74,6 +90,7 @@ export function Edit(){
                         title="Nome do prato" 
                         type="text" 
                         placeholder="Ex.: Salada Ceasar"
+                        value={title}
                         onChange={e => setTitle(e.target.value)}
                         />
 
@@ -83,6 +100,7 @@ export function Edit(){
                         title="Preço" 
                         type="text" 
                         placeholder="R$ 00,00"
+                        value={price} 
                         onChange={e => setPrice(e.target.value)}
                         />
 
@@ -91,6 +109,7 @@ export function Edit(){
                         title="Categoria" 
                         type="text" 
                         placeholder="Categoria"
+                        value={category}
                         onChange={e => setCategory(e.target.value)}
                         />
 
@@ -121,6 +140,7 @@ export function Edit(){
                         <label htmlFor="">Descrição</label>
                         <textarea
                         placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                        value={description}
                         onChange={e => setDescription(e.target.value)}
                         >
                         </textarea>

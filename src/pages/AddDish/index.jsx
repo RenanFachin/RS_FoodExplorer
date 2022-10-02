@@ -31,7 +31,6 @@ export function AddDish(){
     const [ingredients, setIngredients] = useState([])
     const [newIngredient, setNewIngredient] = useState("")
 
-
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
         setNewIngredient("")
@@ -65,11 +64,7 @@ export function AddDish(){
             return alert("Você deixou um ingrediente no campo para adicionar")
         }
         
-        // api.post("/adminDishes", { title, description, price, category, ingredients })
-        // alert("Prato criado com sucesso")
-        // navigate("/")
-
-         // Acessando a api e utilizando o método de create de users
+        //  Acessando a api e utilizando o método de create de users
          api.post("/adminDishes", { title, description, price, category, ingredients })
          .then(()=>{
              alert("Prato criado com sucesso!")
@@ -81,6 +76,7 @@ export function AddDish(){
              }
          }) 
 
+        
     }
 
     return(
@@ -169,7 +165,10 @@ export function AddDish(){
                             <div className='uploadImageSelect'>
                                 <FiUpload size={24}/>
                                 <span>Selecione a imagem</span>
-                                <input id="image" type="file"/>
+                                <input 
+                                id="image" 
+                                type="file" 
+                                />
                             </div>
                         </label>
                         </div>
