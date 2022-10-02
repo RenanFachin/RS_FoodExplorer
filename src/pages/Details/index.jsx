@@ -12,9 +12,10 @@ import { IoIosArrowBack } from 'react-icons/io'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 
 // Import de hooks e api
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
+import { useAuth } from '../../hooks/authContext';
 
 // Import de database p/ teste
 import { itemsDatabase } from '../../utils/database'
@@ -23,15 +24,15 @@ export function Details(){
         // Começando em 1 a quantidade
         const [quantity, setQuantity] = useState(1)
         const [data, setData] = useState(null)
-        const params = useParams()
 
+        const params = useParams()
+        const navigate = useNavigate()
+        const { user } = useAuth()
+
+        
         // console.log(data)
         const imageURL = data && `${api.defaults.baseURL}/files/dishFiles/${data.image}`
         
-
-        // const { id } = useParams(); // Buscando o que ta na url
-        // const data = itemsDatabase.find((item) => item.id === Number(id));
-
         function handleAddItem() {
             setQuantity (quantity+1)
         }
@@ -41,6 +42,19 @@ export function Details(){
             if(quantity == 1){
                 setQuantity(1)
             }
+        }
+
+        async function handleDeleteDish(){
+            const confirm = window.confirm("Deseja realmente deletar o prato do cardápio?")
+        
+            if(confirm){
+                await api.delete(`/adminDishes/${data.id}`)
+                handleRefreshPage()
+            }
+        }
+
+        function handleGoToEditPage(){
+            navigate(`/edit/${data.id}`)
         }
 
         useEffect(() => {
@@ -95,6 +109,8 @@ export function Details(){
 
                     <h4>R$ {data.price}</h4>
 
+                    {
+                    !user.isAdmin ?
                     <div className='Amount'>
                         <button 
                         className='MinusItem'
@@ -114,6 +130,14 @@ export function Details(){
 
                         <Button title="incluir"/>
                     </div>
+
+                    :
+
+                    <div className='Amount'>
+                        <Button title="Deletar" onClick={handleDeleteDish} />
+                        <Button title="Editar" onClick={handleGoToEditPage} />
+                    </div>
+                    }
 
                 </div>
 

@@ -51,7 +51,7 @@ export function Card({data, ...rest}){
         navigate(`/edit/${data.id}`)
     }
 
-    async function handleDeleteItem(){
+    async function handleDeleteDish(){
         const confirm = window.confirm("Deseja realmente deletar o prato do cardápio?")
     
         if(confirm){
@@ -122,7 +122,7 @@ export function Card({data, ...rest}){
             <div className='admItensController'>
                 <Button 
                 title="Deletar"
-                onClick={handleDeleteItem}
+                onClick={handleDeleteDish}
                 />
 
                 <Button 
