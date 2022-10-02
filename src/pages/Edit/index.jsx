@@ -43,8 +43,8 @@ export function Edit(){
     }
 
     async function handleEditDish(){
-        api.post("/adminDishes", { title, description, price, category, ingredients })
-        alert("Prato criado com sucesso")
+        api.put(`/adminDishes/${params.id}`, { title, description, price, category, ingredients })
+        alert("Prato modificado com sucesso")
         navigate("/")
     }
 
@@ -161,7 +161,7 @@ export function Edit(){
                     
                         <Button
                         className='addButton'
-                        title="Adicionar pedido"
+                        title="Editar prato"
                         onClick={handleEditDish}
                         />
                     </SendFormWithImage>
