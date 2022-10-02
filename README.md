@@ -28,13 +28,13 @@ O projeto será divido em duas partes: `Front-end` e `Back-end`
 - [x] Um projeto estruturado, com uma boa organização das pastas, divisão de componentes no front-end, etc.
 - [x] Um arquivo README.md com as especificações sobre como executar o projeto em um ambiente dev.
 - [x] Os usuários deverão se autenticar para entrar na aplicação através da tela de login, você pode aplicar o que aprendeu nas aulas de autenticação JWT. A autenticação deve ser validada com senha.
-- [ ] O admin irá fazer upload de imagens para cadastrar os pratos.
-- [ ] Fazer o deploy da aplicação
+- [x] O admin irá fazer upload de imagens para cadastrar os pratos.
+- [x] Fazer o deploy da aplicação
 - [x] Aplicar conceitos de Clean Code
 - [x] Os dados do admin, do restaurante e dos usuários serão armazenados em um banco de dados.
 - [x] Possibilidade de fazer uma busca pelo nome do prato, pelos ingredientes ou por prato favorito
 - [x] Consumir uma API própria
-- [ ] Aplicação responsiva
+- [] Aplicação responsiva
 - [x] Aplicar algumas animações, transições e transformações
 - [x] Atender ao modelo proposto pelo Figma
 
@@ -74,6 +74,12 @@ O projeto será divido em duas partes: `Front-end` e `Back-end`
 
 # Executando o projeto no ambiente de desenvolvimento
   npm run dev
+```
+
+```bash
+# Perfil do adminstrador
+usuário: adm@email.com
+senha: 123456
 ```
 
 ## ✔️ Autores

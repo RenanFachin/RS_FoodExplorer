@@ -45,9 +45,33 @@ export function Edit(){
     }
 
     async function handleEditDish(){
+        if (!imageFile) {
+            return alert("Adicione uma imagem para o prato")
+        }
+      
+        if (!title) {
+            return alert("Adicione um titulo para o prato")
+        }
+      
+        if (!description) {
+            return alert("Adicione uma descrição para o prato")
+        }
+      
+        if (!category) {
+            return alert("Adicione um categoria para o prato")
+        }
+      
+        if (!price) {
+            return alert("Adicione um preço para o prato")
+        }
+      
+        if (newIngredient) {
+            return alert("Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar.Clique para adicionar ou deixe o campo vazio.")
+        }
+      
         api.put(`/adminDishes/${params.id}`, { title, description, price, category, ingredients })
 
-        const formData = new FormData();
+        const formData= new FormData();
         formData.append("image", imageFile);
 
         api.patch(`/adminDishes/dishImage/${params.id}`, formData)
@@ -60,12 +84,13 @@ export function Edit(){
         async function fetchDish() {
           const response = await api.get(`/dishes/${params.id}`)
     
-          const { title, description, category, price, ingredients } = response.data;
+          const { title, description, category, price, ingredients, imageFile } = response.data;
           setTitle(title);
           setDescription(description);
           setCategory(category);
           setPrice(price);
           setIngredients(ingredients.map(ingredient => ingredient.name));
+          setImageFile(image)
         }
     
         fetchDish();

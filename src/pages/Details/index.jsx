@@ -49,7 +49,7 @@ export function Details(){
         
             if(confirm){
                 await api.delete(`/adminDishes/${data.id}`)
-                handleRefreshPage()
+                navigate(-1)
             }
         }
 

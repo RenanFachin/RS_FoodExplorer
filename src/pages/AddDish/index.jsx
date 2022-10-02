@@ -31,6 +31,8 @@ export function AddDish(){
     const [ingredients, setIngredients] = useState([])
     const [newIngredient, setNewIngredient] = useState("")
 
+    const [imageFile, setImageFile] = useState(null);
+
     function handleAddIngredient(){
         setIngredients(prevState => [...prevState, newIngredient])
         setNewIngredient("")
@@ -65,18 +67,33 @@ export function AddDish(){
         }
         
         //  Acessando a api e utilizando o método de create de users
-         api.post("/adminDishes", { title, description, price, category, ingredients })
-         .then(()=>{
-             alert("Prato criado com sucesso!")
-             navigate("/")
-         })
-         .catch(error => {
-             if(error.response){
-                 alert("Não foi possível cadastrar")
-             }
-         }) 
+        //  api.post("/adminDishes", { title, description, price, category, ingredients })
+        //  .then(()=>{
+        //      alert("Prato criado com sucesso!")
+        //      navigate("/")
+        //  })
+        //  .catch(error => {
+        //      if(error.response){
+        //          alert("Não foi possível cadastrar")
+        //      }
+        //  }) 
 
-        
+         //TESTE
+
+        const formData = new FormData();
+        formData.append("image", imageFile);
+        formData.append("title", title);
+        formData.append("description", description);
+        formData.append("category", category);
+        formData.append("price", price);
+
+        ingredients.map(ingredient => (
+            formData.append("ingredients", ingredient)
+        ))
+
+        api.post("/adminDishes", formData)
+        alert("Prato cadastrado com sucesso");
+        navigate("/")
     }
 
     return(
@@ -168,6 +185,7 @@ export function AddDish(){
                                 <input 
                                 id="image" 
                                 type="file" 
+                                onChange={e => setImageFile(e.target.files[0])}
                                 />
                             </div>
                         </label>
