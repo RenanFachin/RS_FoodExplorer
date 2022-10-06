@@ -8,6 +8,8 @@
 </div>
 <br>
 
+Back-end: https://github.com/RenanFachin/FoodExplorer_BackEnd
+Site funcionando: https://foodexplorer182.netlify.app/
 
 # FOOD EXPLORER
 Aplicação de um cardápio digital para um restaurante fictício, conhecido como FoodExplorer.<br>
