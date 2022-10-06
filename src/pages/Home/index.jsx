@@ -11,6 +11,8 @@ import { Section } from '../../components/Section/'
 import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
 
+import bannerIMG from '../../assets/main_image.png'
+
 export function Home(){
     const [dishes, setDishes] = useState([])
     const [search, setSearch] = useState("")
@@ -30,7 +32,7 @@ export function Home(){
 
                 <Main>
                     <section className='Banner'>
-                        <img src="../../../src/assets/main_image.png" alt="Macarrons" />
+                        <img src={bannerIMG} alt="Macarrons" />
 
                         <div className='Banner-background'>
                             <div>
