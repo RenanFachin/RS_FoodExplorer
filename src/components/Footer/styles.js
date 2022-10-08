@@ -16,6 +16,17 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 768px){
+        max-width: 70.8rem;
+        padding: 2.4rem 0;
+    }
+
+    @media (max-width: 425px){
+        max-width: 42rem;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
 `;
 
 export const Logo = styled.div`
@@ -30,6 +41,15 @@ export const Logo = styled.div`
         line-height: 3rem;
         opacity: 0.3;
     }
+
+    @media (max-width: 425px){
+        gap: 0.8rem;
+
+        >h2 {
+            line-height: 2rem;
+            line-height: 1.5rem;
+        }
+    }
 `;
 
 export const Copyright = styled.span`
@@ -39,5 +59,12 @@ export const Copyright = styled.span`
         font-size: 1.4rem;
         line-height: 1.8rem;
         color: ${({theme})=> theme.COLORS.WHITE_200}
+    }
+
+    @media (max-width: 425px){
+    > span {
+        font-size: 1.2rem;
+        line-height: 1rem;
+    }
     }
 `;

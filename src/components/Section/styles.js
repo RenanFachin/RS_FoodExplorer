@@ -12,6 +12,17 @@ export const Container = styled.div`
         line-height: 4.5rem;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
+
+    @media (max-width: 768px){
+        gap: 2rem;
+        margin-bottom: 0rem;
+        margin-top: 2rem;
+        h2 {
+            font-size: 2.8rem;
+            line-height: 3.5rem;
+            text-align: center;
+        }
+    }
 `;
 
 
@@ -34,7 +45,6 @@ export const Slider = styled.div`
         ::-webkit-scrollbar {
             display: none;
         }
-
   }
 
     .ArrowBack,
@@ -51,4 +61,14 @@ export const Slider = styled.div`
     .ArrowForward{
         background: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
     }
+
+    @media (max-width: 768px){
+    width: 100%;
+    /* max-width: 66.8rem; */
+
+    > div {
+    display: flex;
+    gap: 1rem;
+    }
+  }
 `;

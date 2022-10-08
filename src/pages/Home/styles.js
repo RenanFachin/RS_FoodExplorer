@@ -73,4 +73,17 @@ export const Main = styled.main`
         max-width: 136.8rem;
     }
 
+    @media (max-width: 768px){
+        max-width: 38rem;
+
+        .Banner {
+            display: none;
+        }
+
+        .CardWrapper{
+        gap: 2rem;
+        max-width: 70rem;
+        }
+    }
+    
 `;

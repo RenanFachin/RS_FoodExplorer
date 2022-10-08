@@ -21,4 +21,19 @@ export const Container = styled(Link)`
         width: 3.2rem;
         height: 3.2rem;
     }
+
+    @media (max-width: 768px){
+        width: 16rem;
+        padding: 1.2rem 1.2rem;
+
+        > svg {
+        display: none;
+        }
+    }
+
+    @media (max-width: 425px){
+        font-size: 1.2rem;
+        width: 12rem;
+        padding: 0.5rem 0.5rem;
+    }
 `;

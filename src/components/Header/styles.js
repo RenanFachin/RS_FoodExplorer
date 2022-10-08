@@ -25,6 +25,19 @@ export const Content = styled.div`
             margin-left: 5rem;
         }
     }
+
+    @media (max-width: 768px){
+        max-width: 65.8rem;
+        margin: 0 auto;
+        padding: 2.4rem 0;
+    }
+
+    @media (max-width: 425px){
+        max-width: 42rem;
+        margin: 0 auto;
+        justify-content: center;
+        gap: 1rem;
+    }
 `;
 
 export const Logo = styled(Link)`
@@ -37,6 +50,19 @@ export const Logo = styled(Link)`
         font-weight: 700;
         font-family: 'Roboto', sans-serif;
         line-height: 3rem;
+    }
+
+    @media (max-width: 768px){
+        gap: 0.6rem;
+
+        >h2{
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        }
+    }
+
+    @media (max-width: 425px){
+        display: none;
     }
 `;
 
@@ -51,7 +77,7 @@ export const Logo = styled(Link)`
 // `;
 
 export const Search = styled.div`
-    min-width: 50rem;
+    width: 50rem;
 
     display: flex;
     align-items: center;
@@ -79,7 +105,18 @@ export const Search = styled.div`
         margin-left: 1.4rem;
         fill: ${({theme}) => theme.COLORS.GRAY_100};;
     }
+    
+    @media (max-width: 768px){
+        width: 25rem;
 
+        > svg {
+        margin-left: 1rem;
+        }
+    }
+
+    @media (max-width: 425px){
+        width: 15rem;
+    }
 `;
 
 export const Profile = styled.button`
@@ -99,6 +136,13 @@ export const Profile = styled.button`
             transform: scale(1.2);
         }
     }
+
+    @media (max-width: 425px){
+        >svg {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+    }
 `;
 
 export const Logout = styled.button`
@@ -116,6 +160,13 @@ export const Logout = styled.button`
 
         &:hover{
             transform: scale(1.2);
+        }
+    }
+
+    @media (max-width: 425px){
+        >svg {
+            width: 2.8rem;
+            height: 2.8rem;
         }
     }
 `;
