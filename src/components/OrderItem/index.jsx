@@ -2,7 +2,7 @@
 import { Container } from './styles'
 
 export function OrderItem({qntd, title, price}){
-    let imagem = `../../../src/assets/Pratos/${title}.png`
+    let imagem = "../../../src/assets/Pratos/dish_placeholder.png"
 
     // Atribui em totalPrice o valor de quantidade * o preço prato
     let totalPrice = qntd * price
