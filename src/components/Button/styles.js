@@ -15,4 +15,9 @@ export const Container = styled.button`
     &:disabled{
         opacity: 0.5;
     }
+
+    @media (max-width: 425px){
+        font-size: 1.4rem;
+        padding: 0.2rem;
+    }
 `;

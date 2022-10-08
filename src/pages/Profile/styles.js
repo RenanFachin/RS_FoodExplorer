@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 10.4rem auto 7.2rem;
+    grid-template-rows: 10.4rem auto;
     grid-area: 
     "header"
     "main";
@@ -50,6 +50,51 @@ export const Main = styled.main`
             justify-content: center;
         }
     }
+
+    @media (max-width: 768px){
+        width: 70rem;
+
+        .profile-card{
+        width: 40%;
+        }
+
+        .profile-option{
+        width: 60%;
+        
+        display: flex;
+        gap: 4rem;
+
+        padding: 8rem;
+
+            .logo-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media (max-width: 425px){
+        width: 40rem;
+        
+        .profile-card{
+        width: 60%;
+        }
+
+        .profile-option{
+        width: 40%;
+        
+        display: flex;
+        gap: 3rem;
+        margin: auto;
+
+        padding: 1rem;
+
+            .logo-icon{
+                display: none;
+            }
+        }
+    }
 `;
 
 export const Form = styled.form`
@@ -77,6 +122,11 @@ export const Form = styled.form`
 
     > div:nth-child(4) {
         margin-top: 2rem;
+    }
+
+    @media (max-width: 768px){
+        height: 90%;
+        margin: 2rem auto;
     }
 
 `;
