@@ -18,6 +18,6 @@ export const Container = styled.button`
 
     @media (max-width: 425px){
         font-size: 1.4rem;
-        padding: 0.2rem;
+        padding: 0.4rem;
     }
 `;

@@ -22,4 +22,40 @@ export const Container = styled.section`
             color: ${({theme}) => theme.COLORS.GRAY};
         }
     }
+    
+    @media (max-width: 768px){
+        gap: 1rem;
+
+        .ingredients-wrapper{
+            gap: 1rem;
+        
+            > img{
+                width: 5rem;
+                height: 5rem;
+            }
+
+            > span {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+    }
+
+    @media (max-width: 425px){
+        gap: 1rem;
+
+        .ingredients-wrapper{
+            gap: 1rem;
+        
+            > img{
+                width: 4rem;
+                height: 4rem;
+            }
+
+            > span {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+    }
 `;
