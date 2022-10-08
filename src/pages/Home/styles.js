@@ -74,7 +74,7 @@ export const Main = styled.main`
     }
 
     @media (max-width: 768px){
-        max-width: 38rem;
+        max-width: 70rem;
 
         .Banner {
             display: none;
@@ -86,4 +86,7 @@ export const Main = styled.main`
         }
     }
     
+    @media (max-width: 425px){
+        max-width: 37rem;
+    }
 `;
